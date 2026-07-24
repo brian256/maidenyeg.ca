@@ -6,10 +6,10 @@
 <title>MAIDEN — Clean Spaces, Inspiring Life | SW Edmonton Residential Cleaning</title>
 <meta name="description" content="Woman- and Black-owned boutique residential cleaning in South West Edmonton — Chappelle, Paisley, Jagare Ridge, Heritage Valley and beyond. Call or text 780-238-8998.">
 <link rel="canonical" href="https://maidenyeg.ca/">
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -77,6 +77,7 @@
   .hero-trust svg{width:16px;height:16px;color:var(--pine);flex:none;}
   .hero-badge{max-width:420px;margin:0 auto;}
   .hero-badge img{width:100%;height:auto;border-radius:50%;box-shadow:var(--shadow);}
+  @media(max-width:480px){ .hero-badge{max-width:220px;} }
 
   /* ---------- Statement ---------- */
   .statement{background:var(--pine);color:var(--white);}
@@ -100,11 +101,11 @@
   .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
   @media(max-width:920px){ .services-grid{grid-template-columns:repeat(2,1fr);} }
   @media(max-width:560px){ .services-grid{grid-template-columns:1fr;} }
-  .service-card{position:relative;aspect-ratio:1/1;border-radius:50%;border:1.5px solid var(--pine-deep);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:14%;background:var(--sage);}
+  .service-card{position:relative;aspect-ratio:1/1;border-radius:50%;border:1.5px solid var(--pine-deep);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:14%;background:var(--sage);max-width:250px;width:100%;margin:0 auto;}
   .service-card::before{content:"";position:absolute;inset:8px;border:1px solid var(--sage-deep);border-radius:50%;}
-  .service-card .word{font-family:'Fraunces',serif;font-style:italic;font-size:1.15rem;letter-spacing:0.03em;color:var(--pine);margin-bottom:12px;font-weight:600;}
-  .service-card h3{font-size:1.25rem;margin-bottom:10px;line-height:1.15;}
-  .service-card p{font-size:0.82rem;color:var(--ink-soft);margin:0;position:relative;}
+  .service-card .word{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(0.95rem,4vw,1.15rem);letter-spacing:0.03em;color:var(--pine);margin-bottom:12px;font-weight:600;}
+  .service-card h3{font-size:clamp(1.05rem,4.5vw,1.25rem);margin-bottom:10px;line-height:1.15;}
+  .service-card p{font-size:clamp(0.74rem,3vw,0.82rem);color:var(--ink-soft);margin:0;position:relative;}
 
   /* ---------- Pricing ---------- */
   .pricing-tabs{background:var(--white);border:1px solid var(--line);border-radius:var(--radius-lg);padding:40px;box-shadow:var(--shadow);}
@@ -216,7 +217,7 @@
 <header>
   <div class="wrap nav">
     <a class="brand" href="#top">
-      <img src="logo-primary.png" alt="MAIDEN — Clean Spaces, Inspiring Life">
+      <img src="assets/logo-primary.png" alt="MAIDEN — Clean Spaces, Inspiring Life">
       <span class="brand-name">MAIDEN</span>
     </a>
     <div class="nav-cta">
@@ -246,7 +247,7 @@
         </div>
       </div>
       <div class="hero-badge">
-        <img src="logo-hero.png" alt="MAIDEN — Clean Spaces, Inspiring Life">
+        <img src="assets/logo-hero.png" alt="MAIDEN — Clean Spaces, Inspiring Life">
       </div>
     </div>
   </section>
@@ -438,7 +439,7 @@
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="logo-primary.png" alt="MAIDEN">
+        <img src="assets/logo-primary.png" alt="MAIDEN">
         <span>MAIDEN</span>
       </div>
       <nav class="footer-links">
@@ -728,33 +729,11 @@
 </div>
 
 <script>
-  // ---- Pricing estimator ----
-  const state = { bed: 3, bath: 2 };
-  const bedVal = document.getElementById('bedVal');
-  const bathVal = document.getElementById('bathVal');
-  const estAmount = document.getElementById('estAmount');
-  const svcSelect = document.getElementById('svc');
+  // ---- Estimate widget ----
+  (function(){const _k=[0x6e,0x28,0x19,0x3c],_r=1+2/5,_s={b:3,h:2},_bv=document.getElementById('bedVal'),_hv=document.getElementById('bathVal'),_ea=document.getElementById('estAmount'),_sv=document.getElementById('svc');function _c(){const _x=_k[0]+(_s.b*_k[1])+(Math.max(0,_s.h-1)*_k[2]);let _t=_x;if(_sv.value==='deep')_t=_x*_r;if(_sv.value==='move')_t=(_x*_r)+_k[3];_ea.textContent=Math.round(_t).toLocaleString('en-CA');}document.querySelectorAll('.stepper button').forEach(function(btn){btn.addEventListener('click',function(){const _tg=btn.dataset.target,_d=parseInt(btn.dataset.dir,10),_mn=_tg==='bed'?0:1,_k2=_tg==='bed'?'b':'h';_s[_k2]=Math.max(_mn,Math.min(8,_s[_k2]+_d));(_tg==='bed'?_bv:_hv).textContent=_s[_k2];_c();});});_sv.addEventListener('change',_c);_c();})();
+</script>
 
-  function calc(){
-    const base = 110 + (state.bed * 40) + (Math.max(0, state.bath - 1) * 25);
-    let total = base;
-    if(svcSelect.value === 'deep') total = base * 1.4;
-    if(svcSelect.value === 'move') total = (base * 1.4) + 60;
-    estAmount.textContent = Math.round(total).toLocaleString('en-CA');
-  }
-  document.querySelectorAll('.stepper button').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const target = btn.dataset.target;
-      const dir = parseInt(btn.dataset.dir, 10);
-      const min = target === 'bed' ? 0 : 1;
-      state[target] = Math.max(min, Math.min(8, state[target] + dir));
-      (target === 'bed' ? bedVal : bathVal).textContent = state[target];
-      calc();
-    });
-  });
-  svcSelect.addEventListener('change', calc);
-  calc();
-
+<script>
   // ---- Modals ----
   function openModal(id){
     const m = document.getElementById(id);
