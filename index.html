@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MAIDEN — Clean Spaces, Inspiring Life | SW Edmonton Residential Cleaning</title>
+<meta name="description" content="Woman- and Black-owned boutique residential cleaning in South West Edmonton — Chappelle, Paisley, Jagare Ridge, Heritage Valley and beyond. Call or text 780-238-8998.">
+<link rel="canonical" href="https://maidenyeg.ca/">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pine:#0F6B5C;
+    --pine-deep:#0A4A40;
+    --sage:#DCE8E1;
+    --sage-deep:#B9D0C4;
+    --cream:#FBFAF5;
+    --ink:#16211D;
+    --ink-soft:#54645D;
+    --line:#D8E1DC;
+    --white:#FFFFFF;
+    --radius-lg:28px;
+    --radius-md:18px;
+    --radius-sm:10px;
+    --shadow:0 18px 40px -22px rgba(15,107,92,0.35);
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:'Nunito',system-ui,sans-serif;font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,.serif{font-family:'Fraunces',Georgia,serif;font-weight:500;letter-spacing:-0.01em;margin:0;color:var(--pine-deep);}
+  p{margin:0 0 1em;}
+  a{color:inherit;}
+  img,svg{display:block;max-width:100%;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+  section{padding:88px 0;}
+  @media(max-width:640px){ section{padding:56px 0;} }
+
+  .eyebrow{font-family:'Nunito',sans-serif;font-weight:800;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--pine);display:flex;align-items:center;gap:8px;margin-bottom:14px;}
+  .eyebrow .leaf{width:14px;height:14px;}
+
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible{outline:3px solid var(--pine);outline-offset:2px;border-radius:6px;}
+
+  /* ---------- Header ---------- */
+  header{position:sticky;top:0;z-index:50;background:rgba(251,250,245,0.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0;}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;}
+  .brand img{width:38px;height:38px;border-radius:50%;}
+  .brand-name{font-family:'Fraunces',serif;font-size:1.4rem;color:var(--pine-deep);font-weight:600;line-height:1;}
+  .nav-cta{display:flex;align-items:center;gap:10px;}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:700;font-size:0.95rem;text-decoration:none;border:1.5px solid transparent;cursor:pointer;transition:transform .15s ease, box-shadow .15s ease, background .15s ease;font-family:'Nunito',sans-serif;}
+  .btn:hover{transform:translateY(-1px);}
+  .btn-primary{background:var(--pine);color:var(--white);box-shadow:var(--shadow);}
+  .btn-primary:hover{background:var(--pine-deep);}
+  .btn-ghost{background:transparent;color:var(--pine-deep);border-color:var(--pine-deep);}
+  .btn-ghost:hover{background:var(--sage);}
+  .btn-block{width:100%;}
+  .nav .btn{padding:10px 18px;font-size:0.88rem;}
+  .nav-phone{display:none;}
+  @media(min-width:560px){ .nav-phone{display:inline-flex;} }
+
+  /* ---------- Hero ---------- */
+  .hero{padding:76px 0 60px;position:relative;overflow:hidden;}
+  .hero-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:center;}
+  @media(max-width:880px){ .hero-grid{grid-template-columns:1fr;gap:40px;} }
+  .hero h1{font-size:clamp(2.3rem,4.6vw,3.4rem);line-height:1.08;margin-bottom:20px;}
+  .hero h1 em{font-style:italic;color:var(--pine);}
+  .hero-sub{font-size:1.12rem;color:var(--ink-soft);max-width:48ch;margin-bottom:30px;}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:28px;}
+  .hero-trust{display:flex;flex-wrap:wrap;gap:18px 22px;font-size:0.86rem;color:var(--ink-soft);font-weight:600;}
+  .hero-trust span{display:flex;align-items:center;gap:7px;}
+  .hero-trust svg{width:16px;height:16px;color:var(--pine);flex:none;}
+  .hero-badge{max-width:420px;margin:0 auto;}
+  .hero-badge img{width:100%;height:auto;border-radius:50%;box-shadow:var(--shadow);}
+
+  /* ---------- Statement ---------- */
+  .statement{background:var(--pine);color:var(--white);}
+  .statement blockquote{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:clamp(1.35rem,2.6vw,1.9rem);line-height:1.5;text-align:center;max-width:820px;margin:0 auto;color:var(--white);}
+  .statement cite{display:block;text-align:center;margin-top:22px;font-style:normal;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;opacity:0.85;font-weight:700;}
+
+  /* ---------- About ---------- */
+  .about-lead{font-size:1.08rem;color:var(--ink-soft);max-width:74ch;margin-bottom:36px;}
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:12px;}
+  @media(max-width:760px){ .pillars{grid-template-columns:1fr;} }
+  .pillar{background:var(--white);border:1px solid var(--line);border-radius:var(--radius-md);padding:30px;}
+  .pillar h3{font-size:1.15rem;margin-bottom:10px;}
+  .pillar p{color:var(--ink-soft);font-size:0.95rem;margin:0;}
+
+  .section-head{max-width:660px;margin-bottom:44px;}
+  .section-head h2{font-size:clamp(1.7rem,3.2vw,2.3rem);margin-bottom:14px;}
+  .section-head p{color:var(--ink-soft);font-size:1.05rem;margin:0;}
+  .center{text-align:center;margin-left:auto;margin-right:auto;}
+
+  /* ---------- Services ---------- */
+  .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+  @media(max-width:920px){ .services-grid{grid-template-columns:repeat(2,1fr);} }
+  @media(max-width:560px){ .services-grid{grid-template-columns:1fr;} }
+  .service-card{position:relative;aspect-ratio:1/1;border-radius:50%;border:1.5px solid var(--pine-deep);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:14%;background:var(--sage);}
+  .service-card::before{content:"";position:absolute;inset:8px;border:1px solid var(--sage-deep);border-radius:50%;}
+  .service-card .word{font-family:'Fraunces',serif;font-style:italic;font-size:1.15rem;letter-spacing:0.03em;color:var(--pine);margin-bottom:12px;font-weight:600;}
+  .service-card h3{font-size:1.25rem;margin-bottom:10px;line-height:1.15;}
+  .service-card p{font-size:0.82rem;color:var(--ink-soft);margin:0;position:relative;}
+
+  /* ---------- Pricing ---------- */
+  .pricing-tabs{background:var(--white);border:1px solid var(--line);border-radius:var(--radius-lg);padding:40px;box-shadow:var(--shadow);}
+  @media(max-width:600px){ .pricing-tabs{padding:24px;} }
+  .fine{font-size:0.82rem;color:var(--ink-soft);margin-top:14px;}
+
+  .estimator{display:grid;grid-template-columns:1fr 1fr;gap:36px;}
+  @media(max-width:760px){ .estimator{grid-template-columns:1fr;} }
+  .estimator-controls .field{margin-bottom:18px;}
+  label{display:block;font-weight:700;font-size:0.85rem;margin-bottom:6px;color:var(--pine-deep);}
+  select, input, textarea{width:100%;padding:12px 14px;border-radius:var(--radius-sm);border:1.5px solid var(--line);background:var(--cream);font-family:'Nunito',sans-serif;font-size:0.98rem;color:var(--ink);}
+  .stepper{display:flex;align-items:center;gap:14px;}
+  .stepper button{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--pine-deep);background:var(--white);color:var(--pine-deep);font-size:1.2rem;font-weight:700;cursor:pointer;line-height:1;}
+  .stepper button:hover{background:var(--sage);}
+  .stepper .val{font-family:'Fraunces',serif;font-size:1.3rem;min-width:22px;text-align:center;}
+
+  .estimate-result{background:var(--sage);border-radius:var(--radius-md);padding:32px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;}
+  .estimate-result .leaf{width:26px;height:26px;margin-bottom:12px;color:var(--pine-deep);}
+  .estimate-label{font-size:0.8rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--pine-deep);margin-bottom:6px;}
+  .estimate-amount{font-family:'Fraunces',serif;font-size:2.6rem;color:var(--pine-deep);line-height:1;margin-bottom:8px;}
+  .estimate-amount .cents{font-size:1.3rem;}
+  .estimate-note{font-size:0.85rem;color:var(--pine-deep);opacity:0.85;margin:0 0 14px;}
+
+  .offer-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:32px;}
+  @media(max-width:700px){ .offer-row{grid-template-columns:1fr;} }
+  .offer-card{border:1.5px dashed var(--pine);border-radius:var(--radius-md);padding:22px 24px;background:var(--white);}
+  .offer-card h4{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--pine-deep);margin-bottom:6px;}
+  .offer-card p{font-size:0.88rem;color:var(--ink-soft);margin:0;}
+
+  .custom-grid{margin-top:32px;}
+  .custom-grid > p.lead{font-size:0.95rem;color:var(--ink-soft);margin-bottom:18px;}
+  .custom-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  @media(max-width:760px){ .custom-cards{grid-template-columns:1fr;} }
+  .custom-card{background:var(--pine-deep);color:var(--white);border-radius:var(--radius-md);padding:22px;}
+  .custom-card h4{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:500;margin-bottom:6px;color:var(--white);}
+  .custom-card p{font-size:0.85rem;opacity:0.9;margin:0 0 14px;}
+  .custom-card a{font-size:0.85rem;font-weight:800;text-decoration:underline;}
+
+  /* ---------- Booking ---------- */
+  .booking{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .booking-grid{display:grid;grid-template-columns:0.85fr 1.15fr;gap:56px;align-items:center;}
+  @media(max-width:880px){ .booking-grid{grid-template-columns:1fr;} }
+  .call-card{background:var(--sage);border-radius:var(--radius-lg);padding:36px;height:fit-content;}
+  .call-card .leaf{width:30px;height:30px;margin-bottom:16px;color:var(--pine-deep);}
+  .call-card h3{font-size:1.4rem;margin-bottom:12px;}
+  .call-card p{color:var(--ink-soft);font-size:0.95rem;}
+  .call-number{display:block;font-family:'Fraunces',serif;font-size:1.9rem;color:var(--pine-deep);text-decoration:none;margin:18px 0;font-weight:600;}
+  .call-list{list-style:none;padding:0;margin:22px 0 0;display:flex;flex-direction:column;gap:10px;}
+  .call-list li{display:flex;align-items:flex-start;gap:10px;font-size:0.9rem;color:var(--ink-soft);}
+  .call-list svg{width:16px;height:16px;color:var(--pine);flex:none;margin-top:3px;}
+  .quote-prompt{text-align:center;}
+  .quote-prompt p{color:var(--ink-soft);font-size:1rem;max-width:44ch;margin:0 auto 22px;}
+
+  /* ---------- Team CTA band ---------- */
+  .team-band{background:var(--sage);padding:44px 0;}
+  .team-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;}
+  .team-inner h3{font-size:1.3rem;margin-bottom:6px;}
+  .team-inner p{margin:0;color:var(--ink-soft);font-size:0.92rem;max-width:52ch;}
+
+  /* ---------- Footer ---------- */
+  footer{padding:50px 0 34px;}
+  .footer-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:28px;align-items:flex-start;margin-bottom:24px;}
+  .footer-brand{display:flex;align-items:center;gap:10px;}
+  .footer-brand img{width:30px;height:30px;border-radius:50%;}
+  .footer-brand span{font-family:'Fraunces',serif;font-size:1.2rem;color:var(--pine-deep);}
+  .footer-links{display:flex;gap:26px;flex-wrap:wrap;font-size:0.9rem;font-weight:600;}
+  .footer-links a{text-decoration:none;color:var(--ink-soft);}
+  .footer-links a:hover{color:var(--pine-deep);}
+  .footer-social{display:flex;gap:12px;}
+  .footer-social a{width:36px;height:36px;border-radius:50%;border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--pine-deep);text-decoration:none;}
+  .footer-social a:hover{background:var(--sage);}
+  .footer-social svg{width:17px;height:17px;}
+  .footer-legal{border-top:1px solid var(--line);padding-top:20px;font-size:0.78rem;color:var(--ink-soft);display:flex;flex-wrap:wrap;gap:6px 20px;justify-content:space-between;margin-bottom:14px;}
+  .footer-bottom{font-size:0.8rem;color:var(--ink-soft);display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;}
+  .placeholder-tag{background:var(--sage);color:var(--pine-deep);border-radius:6px;padding:1px 7px;font-weight:700;font-size:0.72rem;letter-spacing:0.02em;}
+
+  /* ---------- Modal ---------- */
+  .modal-overlay{position:fixed;inset:0;background:rgba(10,20,17,0.55);display:flex;align-items:center;justify-content:center;padding:20px;z-index:200;opacity:0;visibility:hidden;transition:opacity .18s ease;}
+  .modal-overlay.open{opacity:1;visibility:visible;}
+  .modal-panel{background:var(--white);border-radius:var(--radius-lg);width:100%;max-width:560px;max-height:90vh;overflow:hidden;position:relative;box-shadow:0 30px 70px -20px rgba(0,0,0,0.4);display:flex;flex-direction:column;}
+  .modal-close{position:absolute;top:12px;right:14px;z-index:2;width:34px;height:34px;border-radius:50%;border:none;background:var(--white);color:var(--pine-deep);font-size:1.3rem;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.15);}
+  .modal-panel iframe{width:100%;height:min(78vh,660px);border:none;display:block;}
+  .modal-panel.doc{max-width:720px;}
+  .doc-inner{padding:44px 40px 36px;overflow-y:auto;max-height:85vh;}
+  .doc-inner h2{font-size:1.5rem;margin-bottom:6px;}
+  .doc-inner .doc-updated{font-size:0.8rem;color:var(--ink-soft);margin-bottom:26px;font-weight:600;}
+  .doc-inner h3{font-family:'Nunito',sans-serif;font-weight:800;font-size:0.95rem;color:var(--pine-deep);margin:26px 0 8px;}
+  .doc-inner p, .doc-inner li{font-size:0.92rem;color:var(--ink-soft);line-height:1.65;margin:0 0 10px;}
+  .doc-inner ul{margin:0 0 12px;padding-left:20px;}
+  .doc-inner strong{color:var(--ink);}
+  .footer-legal-links{display:flex;gap:16px;flex-wrap:wrap;}
+  .footer-legal-link{background:none;border:none;padding:0;font:inherit;font-size:0.8rem;color:var(--ink-soft);text-decoration:underline;cursor:pointer;}
+  .footer-legal-link:hover{color:var(--pine-deep);}
+
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} *{transition:none !important;animation:none !important;} }
+  .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></symbol>
+  <symbol id="icon-leaf" viewBox="0 0 40 40"><path d="M20 6C20 6 8 10 8 22c0 6 5 11 12 12 0-14 0-22 0-28Z"/><path d="M20 6c0 0 12 4 12 16 0 6-5 11-12 12 0-14 0-22 0-28Z" opacity="0.65"/></symbol>
+  <symbol id="icon-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></symbol>
+  <symbol id="icon-tiktok" viewBox="0 0 24 24" fill="currentColor"><path d="M14.5 3c.3 2 1.7 3.6 3.6 4v2.6c-1.4 0-2.7-.4-3.8-1.2v6.4a5.4 5.4 0 1 1-4.6-5.3v2.7a2.7 2.7 0 1 0 1.9 2.6V3h2.9Z"/></symbol>
+  <symbol id="icon-facebook" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.2h2.4l.4-2.8h-2.8V9.2c0-.8.2-1.4 1.4-1.4h1.5V5.3c-.3 0-1.1-.1-2.1-.1-2.1 0-3.6 1.3-3.6 3.7V11H8.3v2.8h2.4V21h2.8Z"/></symbol>
+</svg>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top">
+      <img src="assets/logo-primary.png" alt="MAIDEN — Clean Spaces, Inspiring Life">
+      <span class="brand-name">MAIDEN</span>
+    </a>
+    <div class="nav-cta">
+      <a class="btn btn-ghost nav-phone" href="tel:+17802388998">780-238-8998</a>
+      <button class="btn btn-primary" type="button" data-modal="quoteModal">Get a Free Quote</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow"><svg class="leaf" viewBox="0 0 40 40" fill="currentColor"><use href="#icon-leaf"/></svg> South West Edmonton · Chappelle · Paisley · Jagare Ridge · Heritage Valley — and many more</p>
+        <h1>Clean spaces, <em>inspiring life.</em></h1>
+        <p class="hero-sub">Boutique residential cleaning for private homes, seniors' (and juniors') homes, move-in &amp; move-out, and small events — with eco-conscious products, real transparent estimates, and a team you'll recognize by name.</p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" type="button" data-modal="quoteModal">Get a Free Quote</button>
+          <a class="btn btn-ghost" href="tel:+17802388998">Call or Text 780-238-8998</a>
+        </div>
+        <div class="hero-trust">
+          <span><svg viewBox="0 0 24 24"><use href="#icon-check"/></svg> Woman-owned &amp; Black-owned</span>
+          <span><svg viewBox="0 0 24 24"><use href="#icon-check"/></svg> Eco-committed products</span>
+          <span><svg viewBox="0 0 24 24"><use href="#icon-check"/></svg> Locally based in SW Edmonton</span>
+        </div>
+      </div>
+      <div class="hero-badge">
+        <img src="assets/logo-hero.png" alt="MAIDEN — Clean Spaces, Inspiring Life">
+      </div>
+    </div>
+  </section>
+
+  <!-- STATEMENT -->
+  <section class="statement">
+    <div class="wrap">
+      <blockquote>&ldquo;Life, in all its goodness, is spent in spaces you consider sacred, safe, private and important. We add two words to this list: clean and fresh.&rdquo;</blockquote>
+      <cite>— The MAIDEN promise</cite>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow"><svg class="leaf" viewBox="0 0 40 40" fill="currentColor"><use href="#icon-leaf"/></svg> About MAIDEN</p>
+        <h2>A boutique alternative to the franchise clean.</h2>
+      </div>
+      <p class="about-lead">MAIDEN started as a simple idea: cleaning is care work, not just a task to outsource. We're a small, woman- and Black-owned team based right here in South West Edmonton — not a franchise call centre reading from a script. Every visit is planned around your privacy, your home's real needs, and — where it matters most — the comfort of the seniors (and juniors) who live there, whether that's a grandparent who needs a gentle touch or a new mother who needs one less thing to manage. We show up on time, we use products we'd feel good about in our own homes, and we're building something meant to last in this community for years, not quarters.</p>
+      <div class="pillars">
+        <div class="pillar">
+          <h3>Privacy-first, always</h3>
+          <p>Flexible and same-day scheduling built around your routine, not ours — your home stays your own private space, and nothing about a visit is ever assumed or rushed.</p>
+        </div>
+        <div class="pillar">
+          <h3>A real eco-commitment</h3>
+          <p>Eco-conscious cleaning products across every job, as a standard, not an upsell — because it matters for the people, pets, and little ones who live there long after we've gone.</p>
+        </div>
+        <div class="pillar">
+          <h3>Mindful with seniors (and juniors)</h3>
+          <p>Gentle, safety-conscious cleaning for private and group senior homes, and just as much care for households adjusting to a new baby — with materials chosen for the most sensitive people in the room.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" style="background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <div class="section-head center">
+        <p class="eyebrow" style="justify-content:center;"><svg class="leaf" viewBox="0 0 40 40" fill="currentColor"><use href="#icon-leaf"/></svg> What we do</p>
+        <h2>Four ways we take care of your space</h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="word">Maiden</div>
+          <h3>Private Homes</h3>
+          <p>Routine &amp; deep cleaning, dusting and de-cluttering, catered to privacy. Priority &amp; same-day service available.</p>
+        </div>
+        <div class="service-card">
+          <div class="word">Maiden</div>
+          <h3>Senior Homes</h3>
+          <p>Mindful routine &amp; deep cleaning with materials safe for your beloved seniors, in private or group settings.</p>
+        </div>
+        <div class="service-card">
+          <div class="word">Maiden</div>
+          <h3>Move-In or Out</h3>
+          <p>Expert deep cleaning for a pristine finish — ready to impress future tenants, buyers, or clients.</p>
+        </div>
+        <div class="service-card">
+          <div class="word">Maiden</div>
+          <h3>Private &amp; Small Events</h3>
+          <p>Pre- or post-event deep cleaning so your space is ready to impress guests and hosts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING + ESTIMATOR -->
+  <section id="pricing">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow"><svg class="leaf" viewBox="0 0 40 40" fill="currentColor"><use href="#icon-leaf"/></svg> Pricing</p>
+        <h2>Get your estimate in seconds.</h2>
+        <p>Tell us your home's size below for an instant ballpark. Want the full itemized breakdown? A quick call gets you that too.</p>
+      </div>
+
+      <div class="pricing-tabs">
+        <div class="estimator">
+          <div class="estimator-controls">
+            <div class="field">
+              <label for="svc">Service type</label>
+              <select id="svc">
+                <option value="routine">Routine Cleaning</option>
+                <option value="deep">Deep Cleaning</option>
+                <option value="move">Move-In / Move-Out</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>Bedrooms</label>
+              <div class="stepper">
+                <button type="button" data-target="bed" data-dir="-1" aria-label="Decrease bedrooms">–</button>
+                <span class="val" id="bedVal">3</span>
+                <button type="button" data-target="bed" data-dir="1" aria-label="Increase bedrooms">+</button>
+              </div>
+            </div>
+            <div class="field">
+              <label>Bathrooms</label>
+              <div class="stepper">
+                <button type="button" data-target="bath" data-dir="-1" aria-label="Decrease bathrooms">–</button>
+                <span class="val" id="bathVal">2</span>
+                <button type="button" data-target="bath" data-dir="1" aria-label="Increase bathrooms">+</button>
+              </div>
+            </div>
+          </div>
+          <div class="estimate-result">
+            <svg class="leaf" viewBox="0 0 40 40" fill="currentColor"><use href="#icon-leaf"/></svg>
+            <div class="estimate-label">Your estimate</div>
+            <div class="estimate-amount">$<span id="estAmount">255</span><span class="cents">.00</span></div>
+            <p class="estimate-note">Before 5% GST · a firm price is confirmed on a quick call</p>
+            <button class="btn btn-primary" type="button" data-modal="quoteModal">Book This Estimate</button>
+          </div>
+        </div>
+
+        <div class="offer-row">
+          <div class="offer-card">
+            <h4>Introductory offer</h4>
+            <p>15% off a new client's first Deep Clean or Move-In/Move-Out.</p>
+          </div>
+          <div class="offer-card">
+            <h4>Referral credit</h4>
+            <p>$25 for you, $25 for your friend, after their second completed visit.</p>
+          </div>
+        </div>
+
+        <div class="custom-grid">
+          <p class="lead">A few of our services are quoted personally, after a short conversation about what the space actually needs:</p>
+          <div class="custom-cards">
+            <div class="custom-card">
+              <h4>Senior Homes</h4>
+              <p>Care-focused pricing based on the home and level of support needed.</p>
+              <a href="tel:+17802388998">Call for a Quote</a>
+            </div>
+            <div class="custom-card">
+              <h4>Events</h4>
+              <p>Pre- and post-event cleans, scoped around your guest list and timeline.</p>
+              <a href="tel:+17802388998">Call for a Quote</a>
+            </div>
+            <div class="custom-card">
+              <h4>Private Offices</h4>
+              <p>Small office and workspace cleaning, scheduled around your hours.</p>
+              <a href="tel:+17802388998">Call for a Quote</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section class="booking" id="book">
+    <div class="wrap booking-grid">
+      <div class="call-card">
+        <svg class="leaf" viewBox="0 0 40 40" fill="currentColor"><use href="#icon-leaf"/></svg>
+        <h3>Prefer to just call?</h3>
+        <p>That's genuinely the fastest way to get a firm quote — most calls take under five minutes.</p>
+        <a class="call-number" href="tel:+17802388998">780-238-8998</a>
+        <ul class="call-list">
+          <li><svg viewBox="0 0 24 24"><use href="#icon-check"/></svg> Same-day &amp; priority scheduling available</li>
+          <li><svg viewBox="0 0 24 24"><use href="#icon-check"/></svg> Serving Chappelle, Paisley, Jagare Ridge, Heritage Valley — and many more</li>
+          <li><svg viewBox="0 0 24 24"><use href="#icon-check"/></svg> No pressure — just a straight answer on price</li>
+        </ul>
+      </div>
+
+      <div class="quote-prompt">
+        <p class="eyebrow" style="justify-content:center;"><svg class="leaf" viewBox="0 0 40 40" fill="currentColor"><use href="#icon-leaf"/></svg> Or write to us</p>
+        <h2 style="font-size:1.8rem;margin-bottom:12px;">Tell us about your space</h2>
+        <p>One short form — name, home, and what you need — and we'll follow up directly. No account, no login.</p>
+        <button class="btn btn-primary" type="button" data-modal="quoteModal">Open the Quote Form</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM / VOLUNTEER BAND -->
+  <section class="team-band">
+    <div class="wrap team-inner">
+      <div>
+        <h3>Join Our Team</h3>
+        <p>MAIDEN is growing — and we love training people who take real pride in the work. If you're looking for a role or want to volunteer, we'd like to hear from you.</p>
+      </div>
+      <button class="btn btn-primary" type="button" data-modal="teamModal">Join Our Team</button>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logo-primary.png" alt="MAIDEN">
+        <span>MAIDEN</span>
+      </div>
+      <nav class="footer-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#book">Book</a>
+        <a href="tel:+17802388998">780-238-8998</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/maiden_yeg/" target="_blank" rel="noopener" aria-label="MAIDEN on Instagram"><svg><use href="#icon-instagram"/></svg></a>
+        <a href="https://www.tiktok.com/@maidenyeg" target="_blank" rel="noopener" aria-label="MAIDEN on TikTok"><svg><use href="#icon-tiktok"/></svg></a>
+        <a href="https://www.facebook.com/profile.php?id=61592448293907" target="_blank" rel="noopener" aria-label="MAIDEN on Facebook"><svg><use href="#icon-facebook"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <span>Registered as Maiden Cleaning Service · Alberta Trade Name Reg. #TN28380954</span>
+      <span>Business Number: 764294575</span>
+      <span>GST Tax ID: 764294575RC0001</span>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Maiden Cleaning Service, operating as MAIDEN — South West Edmonton, AB</span>
+      <div class="footer-legal-links">
+        <button class="footer-legal-link" type="button" data-modal="privacyModal">Privacy Policy</button>
+        <button class="footer-legal-link" type="button" data-modal="termsModal">Terms of Service</button>
+      </div>
+      <span>maidenyeg.ca · Clean Spaces, Inspiring Life</span>
+    </div>
+  </div>
+</footer>
+
+<!-- QUOTE MODAL -->
+<div class="modal-overlay" id="quoteModal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Request a free quote">
+  <div class="modal-panel">
+    <button class="modal-close" type="button" data-close="quoteModal" aria-label="Close">&times;</button>
+    <iframe title="Request a free quote" srcdoc="
+<!DOCTYPE html><html><head><meta charset='utf-8'>
+<link href='https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&amp;family=Nunito:wght@400;600;700;800&amp;display=swap' rel='stylesheet'>
+<style>
+  *{box-sizing:border-box;} body{margin:0;padding:26px 24px 24px;font-family:Nunito,sans-serif;color:#16211D;background:#FBFAF5;}
+  h2{font-family:Fraunces,serif;font-weight:600;color:#0A4A40;font-size:1.3rem;margin:0 0 6px;}
+  p.sub{color:#54645D;font-size:0.88rem;margin:0 0 18px;}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;}
+  .full{grid-column:1/-1;}
+  label{display:block;font-weight:700;font-size:0.78rem;margin-bottom:5px;color:#0A4A40;}
+  input,select,textarea{width:100%;padding:10px 12px;border-radius:9px;border:1.5px solid #D8E1DC;background:#fff;font-family:Nunito,sans-serif;font-size:0.92rem;color:#16211D;}
+  fieldset{border:none;padding:0;margin:0 0 12px;}
+  .pets-row{display:flex;gap:16px;align-items:center;margin-top:4px;}
+  .pets-row label{display:flex;align-items:center;gap:6px;font-weight:600;font-size:0.85rem;color:#16211D;}
+  .pets-row input{width:auto;}
+  button{width:100%;padding:13px;border-radius:999px;border:none;background:#0F6B5C;color:#fff;font-weight:800;font-size:0.95rem;cursor:pointer;font-family:Nunito,sans-serif;}
+  button:hover{background:#0A4A40;}
+</style></head>
+<body>
+  <h2>Request a Free Quote</h2>
+  <p class='sub'>Opens a pre-filled email to our team — you will see it before anything sends.</p>
+  <form id='f'>
+    <div class='row'>
+      <div><label for='name'>Full name</label><input id='name' required></div>
+      <div><label for='phone'>Phone</label><input id='phone' type='tel' required></div>
+      <div class='full'><label for='email'>Email</label><input id='email' type='email' required></div>
+      <div><label for='area'>Neighbourhood</label>
+        <select id='area'><option>Chappelle</option><option>Paisley</option><option>Jagare Ridge</option><option>Heritage Valley</option><option>Other SW Edmonton area</option></select>
+      </div>
+      <div><label for='service'>Interested in</label>
+        <select id='service'><option>Private Home Cleaning</option><option>Senior Home Cleaning</option><option>Move-In / Move-Out</option><option>Private or Small Event</option><option>Private Office</option></select>
+      </div>
+      <div class='full'><label for='date'>Preferred date (optional)</label><input id='date' type='date'></div>
+      <div class='full'>
+        <fieldset>
+          <label>Do you have pets on site?</label>
+          <div class='pets-row'>
+            <label><input type='radio' name='pets' value='No' checked> No</label>
+            <label><input type='radio' name='pets' value='Yes'> Yes</label>
+          </div>
+        </fieldset>
+      </div>
+      <div class='full'><label for='petnotes'>Pet details (optional)</label><input id='petnotes' placeholder='e.g. one cat, keeps to the bedroom'></div>
+      <div class='full'><label for='notes'>Anything else we should know?</label><textarea id='notes' rows='3' placeholder='Home size, timing, special requests...'></textarea></div>
+      <div class='full'><button type='submit'>Prepare My Email to MAIDEN</button></div>
+    </div>
+  </form>
+  <script>
+    var BUSINESS_EMAIL = 'hello.maidenyeg@gmail.com';
+    document.getElementById('f').addEventListener('submit', function(e){
+      e.preventDefault();
+      var pets = document.querySelector(&quot;input[name='pets']:checked&quot;).value;
+      var subject = 'New quote request — ' + document.getElementById('service').value + ' (' + document.getElementById('area').value + ')';
+      var body = 'Name: ' + document.getElementById('name').value +
+        '\nPhone: ' + document.getElementById('phone').value +
+        '\nEmail: ' + document.getElementById('email').value +
+        '\nNeighbourhood: ' + document.getElementById('area').value +
+        '\nInterested in: ' + document.getElementById('service').value +
+        '\nPreferred date: ' + (document.getElementById('date').value || 'Flexible') +
+        '\nPets on site: ' + pets + (document.getElementById('petnotes').value ? (' — ' + document.getElementById('petnotes').value) : '') +
+        '\nNotes: ' + (document.getElementById('notes').value || '—');
+      window.top.location.href = 'mailto:' + BUSINESS_EMAIL + '?subject=' + encodeURIComponent(subject) + '&amp;body=' + encodeURIComponent(body);
+    });
+  </script>
+</body></html>
+"></iframe>
+  </div>
+</div>
+
+<!-- TEAM MODAL -->
+<div class="modal-overlay" id="teamModal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Join our team">
+  <div class="modal-panel">
+    <button class="modal-close" type="button" data-close="teamModal" aria-label="Close">&times;</button>
+    <iframe title="Join our team" srcdoc="
+<!DOCTYPE html><html><head><meta charset='utf-8'>
+<link href='https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&amp;family=Nunito:wght@400;600;700;800&amp;display=swap' rel='stylesheet'>
+<style>
+  *{box-sizing:border-box;} body{margin:0;padding:26px 24px 24px;font-family:Nunito,sans-serif;color:#16211D;background:#FBFAF5;}
+  h2{font-family:Fraunces,serif;font-weight:600;color:#0A4A40;font-size:1.3rem;margin:0 0 6px;}
+  p.sub{color:#54645D;font-size:0.88rem;margin:0 0 18px;}
+  label{display:block;font-weight:700;font-size:0.78rem;margin-bottom:5px;color:#0A4A40;}
+  input,select,textarea{width:100%;padding:10px 12px;border-radius:9px;border:1.5px solid #D8E1DC;background:#fff;font-family:Nunito,sans-serif;font-size:0.92rem;color:#16211D;margin-bottom:12px;}
+  button{width:100%;padding:13px;border-radius:999px;border:none;background:#0F6B5C;color:#fff;font-weight:800;font-size:0.95rem;cursor:pointer;font-family:Nunito,sans-serif;}
+  button:hover{background:#0A4A40;}
+</style></head>
+<body>
+  <h2>Join Our Team</h2>
+  <p class='sub'>Tell us a little about yourself — this opens a pre-filled email straight to Fiona.</p>
+  <form id='tf'>
+    <label for='tname'>Full name</label><input id='tname' required>
+    <label for='tphone'>Phone</label><input id='tphone' type='tel' required>
+    <label for='temail'>Email</label><input id='temail' type='email' required>
+    <label for='tmsg'>A bit about you (experience, availability, why you're interested)</label>
+    <textarea id='tmsg' rows='4'></textarea>
+    <button type='submit'>Send to MAIDEN</button>
+  </form>
+  <script>
+    var TEAM_EMAIL = 'hello.maidenyeg@gmail.com';
+    document.getElementById('tf').addEventListener('submit', function(e){
+      e.preventDefault();
+      var name = document.getElementById('tname').value;
+      var subject = 'New Team Inquiry — ' + name + ' wants to join MAIDEN';
+      var body = 'Name: ' + name +
+        '\nPhone: ' + document.getElementById('tphone').value +
+        '\nEmail: ' + document.getElementById('temail').value +
+        '\nMessage: ' + (document.getElementById('tmsg').value || '—');
+      window.top.location.href = 'mailto:' + TEAM_EMAIL + '?subject=' + encodeURIComponent(subject) + '&amp;body=' + encodeURIComponent(body);
+    });
+  </script>
+</body></html>
+"></iframe>
+  </div>
+</div>
+
+<!-- PRIVACY POLICY MODAL -->
+<div class="modal-overlay" id="privacyModal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Privacy Policy">
+  <div class="modal-panel doc">
+    <button class="modal-close" type="button" data-close="privacyModal" aria-label="Close">&times;</button>
+    <div class="doc-inner">
+      <h2>Privacy Policy</h2>
+      <p class="doc-updated">Last updated: July 2026</p>
+
+      <p>MAIDEN is the registered trade name of Maiden Cleaning Service (Alberta Trade Name Registration No. TN28380954, effective May 1, 2025) ("MAIDEN," "we," "us," or "our"), a residential and small-commercial cleaning company based in South West Edmonton, Alberta, serving Chappelle, Paisley, Jagare Ridge, Heritage Valley, and surrounding communities. This Privacy Policy explains how we collect, use, and protect personal information when you visit maidenyeg.ca (the "Site"), contact us, or become a client.</p>
+
+      <h3>1. Information We Collect</h3>
+      <ul>
+        <li>Contact details you provide, such as your name, phone number, email address, and home address or neighbourhood</li>
+        <li>Details about your service request, such as service type, home size, preferred dates, pet information, and special instructions</li>
+        <li>Team or volunteer inquiries, including name, phone, email, and any experience or message you share with us</li>
+        <li>Photos of completed work, only with your explicit written consent (see Section 5)</li>
+        <li>Basic interactions on our social media pages or Google Business Profile, which are also governed by those platforms' own privacy policies</li>
+      </ul>
+      <p>We do not collect payment card information through this Site. Payment is arranged directly with our team.</p>
+
+      <h3>2. How We Use Your Information</h3>
+      <ul>
+        <li>To respond to quote requests and schedule service</li>
+        <li>To communicate with you about appointments, changes, or invoices</li>
+        <li>To respond to team or volunteer inquiries</li>
+        <li>To improve our services</li>
+        <li>With your separate consent, to feature before-and-after photos in our marketing</li>
+      </ul>
+      <p>We do not sell, rent, or trade your personal information to third parties.</p>
+
+      <h3>3. How Your Information Reaches Us</h3>
+      <p>Forms on this Site are currently designed to open a pre-filled email in your own email application, addressed to our business inbox. Your information is sent directly from your device to our email — it does not pass through or get stored on an external server operated by us or a third party. If we adopt a different form or booking tool in the future, we will update this policy to describe that change.</p>
+
+      <h3>4. Photo &amp; Consent Policy</h3>
+      <p>We may photograph completed jobs for quality review and, separately, for marketing purposes. We only use photos publicly with your prior written consent. For senior clients, or where a family member or Power of Attorney is involved in care decisions, we seek consent from that person as well. We never include identifying details such as addresses, mail, personal documents, or medication in any photo we use publicly, and we blur or exclude the faces of residents unless you've specifically agreed otherwise.</p>
+
+      <h3>5. Data Retention</h3>
+      <p>We keep client and inquiry information only as long as reasonably necessary to provide our services, meet legal and tax obligations (such as Canada Revenue Agency recordkeeping requirements), and maintain a reasonable business history. You may request that we delete your information at any time, subject to our legal recordkeeping obligations.</p>
+
+      <h3>6. Your Rights</h3>
+      <p>Under Alberta's Personal Information Protection Act (PIPA) and, where applicable, the federal Personal Information Protection and Electronic Documents Act (PIPEDA), you have the right to:</p>
+      <ul>
+        <li>Ask what personal information we hold about you</li>
+        <li>Request corrections to inaccurate information</li>
+        <li>Withdraw consent for marketing use of your photos or information at any time</li>
+        <li>Request deletion of your information, subject to our legal recordkeeping requirements</li>
+      </ul>
+      <p>To exercise these rights, contact us using the details in Section 9.</p>
+
+      <h3>7. Cookies &amp; Website Analytics</h3>
+      <p>As of this policy's last update, maidenyeg.ca does not use cookies, tracking pixels, or third-party analytics software. If this changes, we will update this policy and, where required, seek your consent.</p>
+
+      <h3>8. Third-Party Links</h3>
+      <p>Our Site and social profiles may link to third-party platforms such as Instagram, Facebook, TikTok, or Google Business Profile. Those platforms have their own privacy policies, which we encourage you to review — we are not responsible for their practices.</p>
+
+      <h3>9. Contact Us</h3>
+      <p>Questions about this Privacy Policy or your personal information can be directed to:<br>
+      <strong>MAIDEN</strong><br>
+      Email: hello.maidenyeg@gmail.com<br>
+      Phone: 780-238-8998<br>
+      South West Edmonton, Alberta</p>
+      <p style="font-size:0.8rem;">MAIDEN is the registered trade name of Maiden Cleaning Service — Alberta Trade Name Registration No. TN28380954 · Business Number 764294575 · GST Tax ID 764294575RC0001.</p>
+
+      <h3>10. Changes to This Policy</h3>
+      <p>We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. The "last updated" date at the top reflects the most recent version.</p>
+    </div>
+  </div>
+</div>
+
+<!-- TERMS OF SERVICE MODAL -->
+<div class="modal-overlay" id="termsModal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Terms of Service">
+  <div class="modal-panel doc">
+    <button class="modal-close" type="button" data-close="termsModal" aria-label="Close">&times;</button>
+    <div class="doc-inner">
+      <h2>Terms of Service</h2>
+      <p class="doc-updated">Last updated: July 2026</p>
+
+      <h3>1. Acceptance of Terms</h3>
+      <p>By using maidenyeg.ca (the "Site") or requesting a quote, booking, or otherwise engaging MAIDEN — the registered trade name of Maiden Cleaning Service, Alberta Trade Name Registration No. TN28380954, effective May 1, 2025 ("MAIDEN," "we," "us," or "our") — you agree to these Terms of Service. If you do not agree, please do not use the Site or our services.</p>
+
+      <h3>2. About MAIDEN</h3>
+      <p>MAIDEN is a residential and small-commercial cleaning company based in South West Edmonton, Alberta, offering Private Home Cleaning, Senior Home Cleaning, Move-In/Move-Out Cleaning, Private &amp; Small Event Cleaning, and Private Office Cleaning within Chappelle, Paisley, Jagare Ridge, Heritage Valley, and surrounding areas.</p>
+
+      <h3>3. Quotes &amp; Estimates</h3>
+      <p>Any price shown on the Site, including figures generated by our online estimate tool, is a non-binding starting estimate based on the information you provide (such as bedroom and bathroom count). Final pricing is confirmed by phone or in writing before any booking is finalized, and is subject to applicable GST. Senior Home, Event, and Private Office pricing is quoted individually after a short consultation and is not published on the Site.</p>
+
+      <h3>4. Booking &amp; Service Agreement</h3>
+      <p>Submitting a quote request through the Site does not create a binding booking. A booking is confirmed only once MAIDEN and the client agree on scope, price, and date. For recurring or larger jobs, MAIDEN may ask you to review and sign a separate Service Agreement setting out the specific terms of your service, including scheduling, cancellation and rescheduling policy, payment terms, access and key-handling procedures, and the damage-claim process. Where a signed Service Agreement and these Terms differ, the Service Agreement governs for that engagement.</p>
+
+      <h3>5. Client Responsibilities</h3>
+      <p>To help us do our job safely and well, clients agree to:</p>
+      <ul>
+        <li>Provide accurate information about the home, access instructions, and any pets on site</li>
+        <li>Secure or disclose fragile, valuable, or sentimental items before a visit</li>
+        <li>Disclose any known hazards (structural, chemical, pest, or otherwise) in advance</li>
+        <li>Ensure a safe, lawful working environment for our team</li>
+      </ul>
+
+      <h3>6. Liability</h3>
+      <p>MAIDEN carries commercial general liability insurance. That said:</p>
+      <ul>
+        <li>We are not liable for pre-existing damage, normal wear and tear, or the failure of improperly installed, maintained, or aged fixtures and surfaces</li>
+        <li>Any damage claim must be reported to us within 48 hours of the service date so we can assess and address it promptly</li>
+        <li>Our total liability for any claim arising from a service is limited to the cost of the service in question, except where limiting liability is not permitted by law</li>
+        <li>We are not responsible for items of unusual value left accessible during a visit that were not disclosed to us in advance</li>
+      </ul>
+      <p>Nothing in these Terms limits any liability that cannot be excluded under Alberta or Canadian law.</p>
+
+      <h3>7. Cancellations &amp; Rescheduling</h3>
+      <p>Specific cancellation and rescheduling terms, including any applicable notice period or fee, will be confirmed with you directly — verbally, by email, or in your Service Agreement — before your first booking.</p>
+
+      <h3>8. Photos &amp; Marketing</h3>
+      <p>We may ask to photograph completed work for quality review and, with your separate written consent, for marketing use. See our Privacy Policy for full detail on our photo and consent practices.</p>
+
+      <h3>9. Website Content &amp; Intellectual Property</h3>
+      <p>All text, graphics, and the MAIDEN name and logo on this Site are the property of MAIDEN and may not be copied, reproduced, or used without our written permission.</p>
+
+      <h3>10. Referral &amp; Promotional Offers</h3>
+      <p>Introductory, referral, and loyalty offers described on the Site are subject to change or withdrawal at any time and apply only as described at the time of a confirmed booking.</p>
+
+      <h3>11. Third-Party Links</h3>
+      <p>This Site may link to third-party platforms such as Instagram, Facebook, TikTok, or Google Business Profile. We are not responsible for the content, policies, or practices of those platforms.</p>
+
+      <h3>12. Governing Law</h3>
+      <p>These Terms are governed by the laws of the Province of Alberta and the federal laws of Canada applicable therein. Any dispute will first be addressed informally between the parties; where that is not possible, disputes will be resolved in the courts of Alberta.</p>
+
+      <h3>13. Changes to These Terms</h3>
+      <p>We may update these Terms from time to time. Continued use of the Site or our services after changes are posted means you accept the updated Terms.</p>
+
+      <h3>14. Contact Us</h3>
+      <p><strong>MAIDEN</strong><br>
+      Email: hello.maidenyeg@gmail.com<br>
+      Phone: 780-238-8998<br>
+      South West Edmonton, Alberta</p>
+      <p style="font-size:0.8rem;">MAIDEN is the registered trade name of Maiden Cleaning Service — Alberta Trade Name Registration No. TN28380954 · Business Number 764294575 · GST Tax ID 764294575RC0001.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ---- Pricing estimator ----
+  const state = { bed: 3, bath: 2 };
+  const bedVal = document.getElementById('bedVal');
+  const bathVal = document.getElementById('bathVal');
+  const estAmount = document.getElementById('estAmount');
+  const svcSelect = document.getElementById('svc');
+
+  function calc(){
+    const base = 110 + (state.bed * 40) + (Math.max(0, state.bath - 1) * 25);
+    let total = base;
+    if(svcSelect.value === 'deep') total = base * 1.4;
+    if(svcSelect.value === 'move') total = (base * 1.4) + 60;
+    estAmount.textContent = Math.round(total).toLocaleString('en-CA');
+  }
+  document.querySelectorAll('.stepper button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.dataset.target;
+      const dir = parseInt(btn.dataset.dir, 10);
+      const min = target === 'bed' ? 0 : 1;
+      state[target] = Math.max(min, Math.min(8, state[target] + dir));
+      (target === 'bed' ? bedVal : bathVal).textContent = state[target];
+      calc();
+    });
+  });
+  svcSelect.addEventListener('change', calc);
+  calc();
+
+  // ---- Modals ----
+  function openModal(id){
+    const m = document.getElementById(id);
+    m.classList.add('open');
+    m.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(id){
+    const m = document.getElementById(id);
+    m.classList.remove('open');
+    m.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  }
+  document.querySelectorAll('[data-modal]').forEach(el => {
+    el.addEventListener('click', () => openModal(el.dataset.modal));
+  });
+  document.querySelectorAll('[data-close]').forEach(el => {
+    el.addEventListener('click', () => closeModal(el.dataset.close));
+  });
+  document.querySelectorAll('.modal-overlay').forEach(overlay => {
+    overlay.addEventListener('click', (e) => { if(e.target === overlay) closeModal(overlay.id); });
+  });
+  document.addEventListener('keydown', (e) => {
+    if(e.key === 'Escape'){
+      document.querySelectorAll('.modal-overlay.open').forEach(m => closeModal(m.id));
+    }
+  });
+</script>
+
+</body>
+</html>
