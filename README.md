@@ -43,7 +43,6 @@ python3 -m http.server 8000
 ```
 index.html          ← the entire site (hero, services, pricing estimator,
                        booking modal, team modal, Privacy/Terms modals, footer)
-assets/
   logo-primary.png       ← primary teal/white circular logo (nav, footer)
   logo-hero.png           ← hero-section logo (10% larger text, same asset family)
   favicon.ico, favicon-32.png, favicon-192.png, apple-touch-icon.png
