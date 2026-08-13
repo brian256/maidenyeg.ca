@@ -85,7 +85,10 @@
   .statement cite{display:block;text-align:center;margin-top:22px;font-style:normal;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;opacity:0.85;font-weight:700;}
 
   /* ---------- About ---------- */
-  .about-lead{font-size:1.08rem;color:var(--ink-soft);max-width:74ch;margin-bottom:36px;}
+  .about-top{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:start;margin-bottom:32px;}
+  .about-art{width:572px;max-width:100%;height:auto;border-radius:var(--radius-lg);display:block;}
+  @media(max-width:920px){ .about-top{grid-template-columns:1fr;} .about-art{margin:0 auto;} }
+  .about-lead{font-size:1.08rem;color:var(--ink-soft);max-width:74ch;margin-bottom:0;}
   .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:12px;}
   @media(max-width:760px){ .pillars{grid-template-columns:1fr;} }
   .pillar{background:var(--white);border:1px solid var(--line);border-radius:var(--radius-md);padding:30px;}
@@ -167,9 +170,12 @@
 
   /* ---------- Team CTA band ---------- */
   .team-band{background:var(--sage);padding:44px 0;}
-  .team-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;}
-  .team-inner h3{font-size:1.3rem;margin-bottom:6px;}
-  .team-inner p{margin:0;color:var(--ink-soft);font-size:0.92rem;max-width:78ch;}
+  .team-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:32px;}
+  .team-text{flex:1 1 380px;}
+  .team-text h3{font-size:1.3rem;margin-bottom:6px;}
+  .team-text p{margin:0;color:var(--ink-soft);font-size:0.92rem;max-width:78ch;}
+  .team-text .btn{margin-top:22px;}
+  .team-art{width:483px;max-width:100%;height:auto;border-radius:var(--radius-lg);display:block;}
 
   /* ---------- Footer ---------- */
   footer{padding:50px 0 34px;}
@@ -270,11 +276,16 @@
   <!-- ABOUT -->
   <section id="about">
     <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow"><svg class="leaf" viewBox="0 0 40 40" fill="currentColor"><use href="#icon-leaf"/></svg> About MAIDEN</p>
-        <h2>A boutique alternative to the franchise clean.</h2>
+      <div class="about-top">
+        <div class="about-text">
+          <div class="section-head">
+            <p class="eyebrow"><svg class="leaf" viewBox="0 0 40 40" fill="currentColor"><use href="#icon-leaf"/></svg> About MAIDEN</p>
+            <h2>A boutique alternative to the franchise clean.</h2>
+          </div>
+          <p class="about-lead">MAIDEN started as a simple idea: cleaning is care work, not just a task to outsource. We're a small, woman-owned team based right here in South West Edmonton — not a franchise call centre reading from a script. Every visit is planned around your privacy, your space's real needs, and — where it matters most — the comfort of the seniors (and juniors) who live there, whether that's a grandparent who needs a gentle touch or a new mother who needs one less thing to manage. We show up on time, we use products we'd feel good about in our own homes, and we're building something meant to last in this community for years, not quarters.</p>
+        </div>
+        <img class="about-art" src="about-artwork.jpg" alt="Cleaning supplies in a basket, surrounded by eucalyptus leaves">
       </div>
-      <p class="about-lead">MAIDEN started as a simple idea: cleaning is care work, not just a task to outsource. We're a small, woman-owned team based right here in South West Edmonton — not a franchise call centre reading from a script. Every visit is planned around your privacy, your space's real needs, and — where it matters most — the comfort of the seniors (and juniors) who live there, whether that's a grandparent who needs a gentle touch or a new mother who needs one less thing to manage. We show up on time, we use products we'd feel good about in our own homes, and we're building something meant to last in this community for years, not quarters.</p>
       <div class="pillars">
         <div class="pillar">
           <h3>Privacy-first, always</h3>
@@ -504,11 +515,12 @@
   <!-- TEAM / VOLUNTEER BAND -->
   <section class="team-band">
     <div class="wrap team-inner">
-      <div>
+      <div class="team-text">
         <h3>Join Our Team</h3>
         <p>MAIDEN is growing, and we're looking for people who take real pride in the details — the kind of care that turns a house into a home. Whether you're an experienced cleaner, a student looking to build real-world experience, or simply after steady, respectful work, we'd love to hear from you. We train well, we treat our team like family, and we're building something meant to last in this community for years to come.</p>
+        <button class="btn btn-primary" type="button" data-modal="teamModal">Join Our Team</button>
       </div>
-      <button class="btn btn-primary" type="button" data-modal="teamModal">Join Our Team</button>
+      <img class="team-art" src="team-artwork.jpg" alt="Illustration of a diverse group of people standing together">
     </div>
   </section>
 
