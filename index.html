@@ -770,7 +770,7 @@
             <div class="estimate-label" id="estLabel">Your estimate</div>
             <div class="estimate-amount">$<span id="estAmount">255</span><span class="cents" id="estCents">.00</span></div>
             <p class="estimate-note" id="estNote">Before 5% GST · a firm price is confirmed on a quick call</p>
-            <button class="btn btn-primary" type="button" data-modal="quoteModal"><span id="estBtnLabel">Book This Estimate</span></button>
+            <button class="btn btn-primary" type="button" data-modal="reserveModal"><span id="estBtnLabel">Reserve This Now</span></button>
           </div>
         </div>
 
@@ -1084,51 +1084,320 @@
   .pets-row input{width:auto;}
   button{width:100%;padding:13px;border-radius:999px;border:none;background:#0F6B5C;color:#fff;font-weight:800;font-size:0.95rem;cursor:pointer;font-family:Nunito,sans-serif;}
   button:hover{background:#0A4A40;}
+  #resultText{min-height:190px;font-family:Nunito,sans-serif;font-size:0.87rem;line-height:1.55;resize:vertical;}
+  .btn-row{display:flex;gap:10px;margin-top:10px;}
+  .btn-outline{flex:1;display:block;text-align:center;padding:11px;border-radius:999px;border:1.5px solid #0F6B5C;color:#0A4A40;font-weight:800;font-size:0.85rem;text-decoration:none;background:#fff;}
+  .btn-outline:hover{background:#DCE8E1;}
+  .btn-ghost-sm{background:none;border:none;color:#54645D;font-weight:700;font-size:0.85rem;padding:10px 0 0;cursor:pointer;width:100%;text-align:center;}
 </style></head>
 <body>
-  <h2>Request a Free Quote</h2>
-  <p class='sub'>Opens a pre-filled email to our team — you will see it before anything sends.</p>
-  <form id='f'>
-    <div class='row'>
-      <div><label for='name'>Full name</label><input id='name' required></div>
-      <div><label for='phone'>Phone</label><input id='phone' type='tel' required></div>
-      <div class='full'><label for='email'>Email</label><input id='email' type='email' required></div>
-      <div><label for='area'>Neighbourhood</label>
-        <select id='area'><option>Chappelle</option><option>Paisley</option><option>Jagare Ridge</option><option>Heritage Valley</option><option>Other SW Edmonton area</option></select>
+  <div id='formView'>
+    <h2>Request a Free Quote</h2>
+    <p class='sub'>We'll put your answers into a ready-to-send message — you'll see it before it goes anywhere, and can send it however you'd like.</p>
+    <form id='f'>
+      <div class='row'>
+        <div><label for='name'>Full name</label><input id='name' required></div>
+        <div><label for='phone'>Phone</label><input id='phone' type='tel' required></div>
+        <div class='full'><label for='email'>Email</label><input id='email' type='email' required></div>
+        <p class='full' style='font-size:0.72rem;color:#54645D;margin:-6px 0 4px;'>We need this to reach you.</p>
+        <div><label for='area'>Community</label>
+          <select id='area'><option>Edmonton</option><option>St. Albert</option><option>Leduc</option><option>Beaumont</option><option>Spruce Grove</option><option>Sherwood Park</option><option>Fort Saskatchewan</option></select>
+        </div>
+        <div><label for='service'>Interested in</label>
+          <select id='service'><option>Private Home Cleaning</option><option>Senior Home Cleaning</option><option>Move-In / Move-Out</option><option>Private or Small Event</option><option>Private Office</option></select>
+        </div>
+        <div class='full'><label for='addr'>Address</label><input id='addr' required placeholder='Helps us plan travel time and assign the closest available cleaner'></div>
+        <p class='full' style='font-size:0.72rem;color:#54645D;margin:-6px 0 4px;'>We need this to make a better estimate.</p>
+        <div><label for='date'>Preferred date (optional)</label><input id='date' type='date'></div>
+        <div><label for='timeblock'>Preferred time</label>
+          <select id='timeblock'>
+            <option>No preference</option>
+            <option>AM (7&ndash;11am)</option>
+            <option>PM (12&ndash;4pm)</option>
+            <option>Evening (5&ndash;9pm)</option>
+          </select>
+        </div>
+        <div class='full'>
+          <fieldset>
+            <label>Do you have pets on site?</label>
+            <div class='pets-row'>
+              <label><input type='radio' name='pets' value='No' checked> No</label>
+              <label><input type='radio' name='pets' value='Yes'> Yes</label>
+            </div>
+          </fieldset>
+        </div>
+        <div class='full'><label for='petnotes'>Pet details (optional)</label><input id='petnotes' placeholder='e.g. one cat, keeps to the bedroom'></div>
+        <div class='full'><label for='discount'>Check my discount eligibility</label>
+          <select id='discount'>
+            <option>Not sure — please check</option>
+            <option>New client — first Deep Clean or Move-In/Move-Out (15% off)</option>
+            <option>I was referred by an existing client ($30 credit)</option>
+            <option>Interested in a recurring plan (Fresh Start / Maintenance / Weekly)</option>
+            <option>None of these — just a one-time visit</option>
+          </select>
+        </div>
+        <div class='full'><label for='notes'>Anything else we should know?</label><textarea id='notes' rows='3' placeholder='Space size, timing, special requests...'></textarea></div>
+        <div class='full'><button type='submit'>Prepare My Message</button></div>
       </div>
-      <div><label for='service'>Interested in</label>
-        <select id='service'><option>Private Home Cleaning</option><option>Senior Home Cleaning</option><option>Move-In / Move-Out</option><option>Private or Small Event</option><option>Private Office</option></select>
-      </div>
-      <div class='full'><label for='date'>Preferred date (optional)</label><input id='date' type='date'></div>
-      <div class='full'>
-        <fieldset>
-          <label>Do you have pets on site?</label>
-          <div class='pets-row'>
-            <label><input type='radio' name='pets' value='No' checked> No</label>
-            <label><input type='radio' name='pets' value='Yes'> Yes</label>
-          </div>
-        </fieldset>
-      </div>
-      <div class='full'><label for='petnotes'>Pet details (optional)</label><input id='petnotes' placeholder='e.g. one cat, keeps to the bedroom'></div>
-      <div class='full'><label for='notes'>Anything else we should know?</label><textarea id='notes' rows='3' placeholder='Space size, timing, special requests...'></textarea></div>
-      <div class='full'><button type='submit'>Prepare My Email to MAIDEN</button></div>
+    </form>
+  </div>
+  <div id='resultView' style='display:none;'>
+    <h2>Your Message Is Ready</h2>
+    <p class='sub'>Copy this and send it however you'd like — WhatsApp, email, text, whatever's easiest. Feel free to edit it first.</p>
+    <textarea id='resultText'></textarea>
+    <div class='full' style='margin-top:12px;'><button type='button' id='copyBtn'>Copy to Clipboard</button></div>
+    <div class='btn-row'>
+      <a id='emailLink' class='btn-outline' href='#' target='_top'>Open in Email</a>
+      <a id='waLink' class='btn-outline' href='#' target='_blank' rel='noopener'>Open in WhatsApp</a>
     </div>
-  </form>
+    <button type='button' id='backBtn' class='btn-ghost-sm'>&amp;larr; Edit my answers</button>
+  </div>
   <script>
     var BUSINESS_EMAIL = 'hello.maidenyeg@gmail.com';
+    var BUSINESS_PHONE = '17802388998';
+    var formView = document.getElementById('formView');
+    var resultView = document.getElementById('resultView');
+    var resultText = document.getElementById('resultText');
+    var copyBtn = document.getElementById('copyBtn');
+    var emailLink = document.getElementById('emailLink');
+    var waLink = document.getElementById('waLink');
+
+    function buildMessage(){
+      var pets = document.querySelector('input[name=pets]:checked').value;
+      var petLine = pets + (document.getElementById('petnotes').value ? (' — ' + document.getElementById('petnotes').value) : '');
+      var name = document.getElementById('name').value;
+      var service = document.getElementById('service').value;
+      var addr = document.getElementById('addr').value;
+      var area = document.getElementById('area').value;
+      var dateVal = document.getElementById('date').value || 'a date to be discussed';
+      var timeVal = document.getElementById('timeblock').value;
+      var whenPhrase = dateVal + ((timeVal && timeVal !== 'No preference') ? (' during ' + timeVal) : '');
+      var phone = document.getElementById('phone').value;
+      var email = document.getElementById('email').value;
+      var discount = document.getElementById('discount').value;
+      var notes = document.getElementById('notes').value || 'None';
+      var lines = [
+        'Hi MAIDEN, I am ' + name + '. I would like a quote for ' + service + ' at ' + addr + ' in ' + area + '.',
+        '',
+        'Can you kindly confirm availability on ' + whenPhrase + '?',
+        '',
+        'Here is what else you need to know:',
+        'Pets on site: ' + petLine,
+        'Discount check: ' + discount,
+        'Additional notes: ' + notes,
+        '',
+        'You can reach me on WhatsApp or by call at ' + phone + ', or by email at ' + email + '.',
+        '',
+        'Looking forward to hearing from you,',
+        name
+      ];
+      return lines.join(String.fromCharCode(10));
+    }
+
     document.getElementById('f').addEventListener('submit', function(e){
       e.preventDefault();
-      var pets = document.querySelector(&quot;input[name='pets']:checked&quot;).value;
-      var subject = 'New quote request — ' + document.getElementById('service').value + ' (' + document.getElementById('area').value + ')';
-      var body = 'Name: ' + document.getElementById('name').value +
-        '\nPhone: ' + document.getElementById('phone').value +
-        '\nEmail: ' + document.getElementById('email').value +
-        '\nNeighbourhood: ' + document.getElementById('area').value +
-        '\nInterested in: ' + document.getElementById('service').value +
-        '\nPreferred date: ' + (document.getElementById('date').value || 'Flexible') +
-        '\nPets on site: ' + pets + (document.getElementById('petnotes').value ? (' — ' + document.getElementById('petnotes').value) : '') +
-        '\nNotes: ' + (document.getElementById('notes').value || '—');
-      window.top.location.href = 'mailto:' + BUSINESS_EMAIL + '?subject=' + encodeURIComponent(subject) + '&amp;body=' + encodeURIComponent(body);
+      var msg = buildMessage();
+      resultText.value = msg;
+      formView.style.display = 'none';
+      resultView.style.display = 'block';
+      var subject = 'New quote request from ' + document.getElementById('name').value;
+      emailLink.href = 'mailto:' + BUSINESS_EMAIL + '?subject=' + encodeURIComponent(subject) + '&amp;body=' + encodeURIComponent(msg);
+      waLink.href = 'https://wa.me/' + BUSINESS_PHONE + '?text=' + encodeURIComponent(msg);
+    });
+
+    copyBtn.addEventListener('click', function(){
+      resultText.focus();
+      resultText.select();
+      var copied = false;
+      try{
+        if(navigator.clipboard &amp;&amp; navigator.clipboard.writeText){
+          navigator.clipboard.writeText(resultText.value);
+          copied = true;
+        }
+      }catch(err){}
+      if(!copied){
+        try{ document.execCommand('copy'); copied = true; }catch(err){}
+      }
+      copyBtn.textContent = copied ? 'Copied!' : 'Select the text above and copy';
+      setTimeout(function(){ copyBtn.textContent = 'Copy to Clipboard'; }, 2200);
+    });
+
+    document.getElementById('backBtn').addEventListener('click', function(){
+      resultView.style.display = 'none';
+      formView.style.display = 'block';
+    });
+  </script>
+</body></html>
+"></iframe>
+  </div>
+</div>
+
+<!-- RESERVE MODAL -->
+<div class="modal-overlay" id="reserveModal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Reserve this rate">
+  <div class="modal-panel">
+    <button class="modal-close" type="button" data-close="reserveModal" aria-label="Close">&times;</button>
+    <iframe title="Reserve this rate" srcdoc="
+<!DOCTYPE html><html><head><meta charset='utf-8'>
+<link href='https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&amp;family=Nunito:wght@400;600;700;800&amp;display=swap' rel='stylesheet'>
+<style>
+  *{box-sizing:border-box;} body{margin:0;padding:26px 24px 24px;font-family:Nunito,sans-serif;color:#16211D;background:#FBFAF5;}
+  h2{font-family:Fraunces,serif;font-weight:600;color:#0A4A40;font-size:1.3rem;margin:0 0 6px;}
+  p.sub{color:#54645D;font-size:0.88rem;margin:0 0 14px;}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;}
+  .full{grid-column:1/-1;}
+  label{display:block;font-weight:700;font-size:0.78rem;margin-bottom:5px;color:#0A4A40;}
+  input,select,textarea{width:100%;padding:10px 12px;border-radius:9px;border:1.5px solid #D8E1DC;background:#fff;font-family:Nunito,sans-serif;font-size:0.92rem;color:#16211D;}
+  fieldset{border:none;padding:0;margin:0 0 12px;}
+  .pets-row{display:flex;gap:16px;align-items:center;margin-top:4px;}
+  .pets-row label{display:flex;align-items:center;gap:6px;font-weight:600;font-size:0.85rem;color:#16211D;}
+  .pets-row input{width:auto;}
+  button{width:100%;padding:13px;border-radius:999px;border:none;background:#0F6B5C;color:#fff;font-weight:800;font-size:0.95rem;cursor:pointer;font-family:Nunito,sans-serif;}
+  button:hover{background:#0A4A40;}
+  #rsvSummary{background:#DCE8E1;border-radius:12px;padding:14px 16px;margin-bottom:10px;font-size:0.92rem;color:#0A4A40;font-weight:700;line-height:1.5;}
+  #rsvDisclaimer{font-size:0.78rem;color:#54645D;margin:0 0 18px;line-height:1.5;}
+  #resultTextR{min-height:190px;font-family:Nunito,sans-serif;font-size:0.87rem;line-height:1.55;resize:vertical;}
+  .btn-row{display:flex;gap:10px;margin-top:10px;}
+  .btn-outline{flex:1;display:block;text-align:center;padding:11px;border-radius:999px;border:1.5px solid #0F6B5C;color:#0A4A40;font-weight:800;font-size:0.85rem;text-decoration:none;background:#fff;}
+  .btn-outline:hover{background:#DCE8E1;}
+  .btn-ghost-sm{background:none;border:none;color:#54645D;font-weight:700;font-size:0.85rem;padding:10px 0 0;cursor:pointer;width:100%;text-align:center;}
+</style></head>
+<body>
+  <div id='formViewR'>
+    <h2>Reserve This Now</h2>
+    <p class='sub'>You've already seen your estimate — let's lock in a booking for it.</p>
+    <div id='rsvSummary'>Loading your estimate...</div>
+    <p id='rsvDisclaimer'>When you send this, expect us to confirm your price and booking within the hour.</p>
+    <form id='rf'>
+      <div class='row'>
+        <div><label for='rname'>Full name</label><input id='rname' required></div>
+        <div><label for='rphone'>Phone</label><input id='rphone' type='tel' required></div>
+        <div class='full'><label for='remail'>Email</label><input id='remail' type='email' required></div>
+        <p class='full' style='font-size:0.72rem;color:#54645D;margin:-6px 0 4px;'>We need this to reach you.</p>
+        <div><label for='rarea'>Community</label>
+          <select id='rarea'><option>Edmonton</option><option>St. Albert</option><option>Leduc</option><option>Beaumont</option><option>Spruce Grove</option><option>Sherwood Park</option><option>Fort Saskatchewan</option></select>
+        </div>
+        <div class='full'><label for='raddr'>Address</label><input id='raddr' required placeholder='Helps us plan travel time and assign the closest available cleaner'></div>
+        <p class='full' style='font-size:0.72rem;color:#54645D;margin:-6px 0 4px;'>We need this to make a better estimate.</p>
+        <div><label for='rdate'>Preferred date</label><input id='rdate' type='date'></div>
+        <div><label for='rtimeblock'>Preferred time</label>
+          <select id='rtimeblock'>
+            <option>No preference</option>
+            <option>AM (7&amp;ndash;11am)</option>
+            <option>PM (12&amp;ndash;4pm)</option>
+            <option>Evening (5&amp;ndash;9pm)</option>
+          </select>
+        </div>
+        <div class='full'>
+          <fieldset>
+            <label>Do you have pets on site?</label>
+            <div class='pets-row'>
+              <label><input type='radio' name='rpets' value='No' checked> No</label>
+              <label><input type='radio' name='rpets' value='Yes'> Yes</label>
+            </div>
+          </fieldset>
+        </div>
+        <div class='full'><label for='rpetnotes'>Pet details (optional)</label><input id='rpetnotes' placeholder='e.g. one cat, keeps to the bedroom'></div>
+        <div class='full'><label for='rdiscount'>Check my discount eligibility</label>
+          <select id='rdiscount'>
+            <option>Not sure — please check</option>
+            <option>New client — first Deep Clean or Move-In/Move-Out (15% off)</option>
+            <option>I was referred by an existing client ($30 credit)</option>
+            <option>Interested in a recurring plan (Fresh Start / Maintenance / Weekly)</option>
+            <option>None of these — just a one-time visit</option>
+          </select>
+        </div>
+        <div class='full'><label for='rnotes'>Anything else we should know?</label><textarea id='rnotes' rows='3' placeholder='Timing, special requests...'></textarea></div>
+        <div class='full'><button type='submit'>Confirm My Reservation</button></div>
+      </div>
+    </form>
+  </div>
+  <div id='resultViewR' style='display:none;'>
+    <h2>Your Reservation Is Ready</h2>
+    <p class='sub'>Copy this and send it however you'd like — WhatsApp, email, text, whatever's easiest. Feel free to edit it first.</p>
+    <textarea id='resultTextR'></textarea>
+    <div style='margin-top:12px;'><button type='button' id='copyBtnR'>Copy to Clipboard</button></div>
+    <div class='btn-row'>
+      <a id='emailLinkR' class='btn-outline' href='#' target='_top'>Open in Email</a>
+      <a id='waLinkR' class='btn-outline' href='#' target='_blank' rel='noopener'>Open in WhatsApp</a>
+    </div>
+    <button type='button' id='backBtnR' class='btn-ghost-sm'>&amp;larr; Edit my answers</button>
+  </div>
+  <script>
+    var BUSINESS_EMAIL = 'hello.maidenyeg@gmail.com';
+    var BUSINESS_PHONE = '17802388998';
+    var formViewR = document.getElementById('formViewR');
+    var resultViewR = document.getElementById('resultViewR');
+    var resultTextR = document.getElementById('resultTextR');
+    var copyBtnR = document.getElementById('copyBtnR');
+    var emailLinkR = document.getElementById('emailLinkR');
+    var waLinkR = document.getElementById('waLinkR');
+
+    function buildReserveMessage(){
+      var pets = document.querySelector('input[name=rpets]:checked').value;
+      var petLine = pets + (document.getElementById('rpetnotes').value ? (' — ' + document.getElementById('rpetnotes').value) : '');
+      var name = document.getElementById('rname').value;
+      var addr = document.getElementById('raddr').value;
+      var area = document.getElementById('rarea').value;
+      var summary = document.getElementById('rsvSummary').textContent;
+      var dateVal = document.getElementById('rdate').value || 'a date to be discussed';
+      var timeVal = document.getElementById('rtimeblock').value;
+      var whenPhrase = dateVal + ((timeVal &amp;&amp; timeVal !== 'No preference') ? (' during ' + timeVal) : '');
+      var phone = document.getElementById('rphone').value;
+      var email = document.getElementById('remail').value;
+      var discount = document.getElementById('rdiscount').value;
+      var notes = document.getElementById('rnotes').value || 'None';
+      var lines = [
+        'Hi MAIDEN, I am ' + name + ' and I would like to reserve this rate:',
+        '',
+        summary,
+        '',
+        'At: ' + addr + ' in ' + area,
+        'Please confirm availability on ' + whenPhrase + '.',
+        '',
+        'Here is what else you need to know:',
+        'Pets on site: ' + petLine,
+        'Discount check: ' + discount,
+        'Additional notes: ' + notes,
+        '',
+        'You can reach me on WhatsApp or by call at ' + phone + ', or by email at ' + email + '.',
+        '',
+        'Looking forward to your confirmation,',
+        name
+      ];
+      return lines.join(String.fromCharCode(10));
+    }
+
+    document.getElementById('rf').addEventListener('submit', function(e){
+      e.preventDefault();
+      var msg = buildReserveMessage();
+      resultTextR.value = msg;
+      formViewR.style.display = 'none';
+      resultViewR.style.display = 'block';
+      var subject = 'Reservation request from ' + document.getElementById('rname').value;
+      emailLinkR.href = 'mailto:' + BUSINESS_EMAIL + '?subject=' + encodeURIComponent(subject) + '&amp;body=' + encodeURIComponent(msg);
+      waLinkR.href = 'https://wa.me/' + BUSINESS_PHONE + '?text=' + encodeURIComponent(msg);
+    });
+
+    copyBtnR.addEventListener('click', function(){
+      resultTextR.focus();
+      resultTextR.select();
+      var copied = false;
+      try{
+        if(navigator.clipboard &amp;&amp; navigator.clipboard.writeText){
+          navigator.clipboard.writeText(resultTextR.value);
+          copied = true;
+        }
+      }catch(err){}
+      if(!copied){
+        try{ document.execCommand('copy'); copied = true; }catch(err){}
+      }
+      copyBtnR.textContent = copied ? 'Copied!' : 'Select the text above and copy';
+      setTimeout(function(){ copyBtnR.textContent = 'Copy to Clipboard'; }, 2200);
+    });
+
+    document.getElementById('backBtnR').addEventListener('click', function(){
+      resultViewR.style.display = 'none';
+      formViewR.style.display = 'block';
     });
   </script>
 </body></html>
@@ -1151,46 +1420,117 @@
   input,select,textarea{width:100%;padding:10px 12px;border-radius:9px;border:1.5px solid #D8E1DC;background:#fff;font-family:Nunito,sans-serif;font-size:0.92rem;color:#16211D;margin-bottom:12px;}
   button{width:100%;padding:13px;border-radius:999px;border:none;background:#0F6B5C;color:#fff;font-weight:800;font-size:0.95rem;cursor:pointer;font-family:Nunito,sans-serif;}
   button:hover{background:#0A4A40;}
+  #resultTextT{min-height:190px;font-family:Nunito,sans-serif;font-size:0.87rem;line-height:1.55;resize:vertical;}
+  .btn-row{display:flex;gap:10px;margin-top:10px;}
+  .btn-outline{flex:1;display:block;text-align:center;padding:11px;border-radius:999px;border:1.5px solid #0F6B5C;color:#0A4A40;font-weight:800;font-size:0.85rem;text-decoration:none;background:#fff;}
+  .btn-outline:hover{background:#DCE8E1;}
+  .btn-ghost-sm{background:none;border:none;color:#54645D;font-weight:700;font-size:0.85rem;padding:10px 0 0;cursor:pointer;width:100%;text-align:center;}
 </style></head>
 <body>
-  <h2>Join Our Team</h2>
-  <p class='sub'>Tell us a little about yourself — this opens a pre-filled email straight to Fiona.</p>
-  <div style='background:#DCE8E1;border-radius:12px;padding:14px 16px;margin-bottom:18px;font-size:0.82rem;color:#16211D;line-height:1.5;'>
-    <strong>Good to know before you apply:</strong> MAIDEN contractors work on a per-job basis. You'll want to be (or become) BN-registered, and carry your own basic insurance and equipment — happy to walk you through either if they're new to you. Pay is flat per job for known, recurring work, or $20/hr with a 2–4hr minimum for first-visit and open-scope jobs.
+  <div id='formViewT'>
+    <h2>Join Our Team</h2>
+    <p class='sub'>Tell us a little about yourself — we'll put it into a ready-to-send message you can send Fiona however you'd like.</p>
+    <div style='background:#DCE8E1;border-radius:12px;padding:14px 16px;margin-bottom:18px;font-size:0.82rem;color:#16211D;line-height:1.5;'>
+      <strong>Good to know before you apply:</strong> MAIDEN contractors work on a per-job basis. You'll want to be (or become) BN-registered, and carry your own basic insurance and equipment — happy to walk you through either if they're new to you. Pay is flat per job for known, recurring work, or $20/hr with a 2&amp;ndash;4hr minimum for first-visit and open-scope jobs.
+    </div>
+    <form id='tf'>
+      <label for='tname'>Full name</label><input id='tname' required>
+      <label for='tphone'>Phone</label><input id='tphone' type='tel' required>
+      <label for='temail'>Email</label><input id='temail' type='email' required>
+      <p style='font-size:0.72rem;color:#54645D;margin:-8px 0 12px;'>We need this to reach you.</p>
+      <label for='taddr'>Address</label><input id='taddr' required placeholder='Helps us match you to jobs near you'>
+      <p style='font-size:0.72rem;color:#54645D;margin:-8px 0 12px;'>We need this to plan job assignments near you.</p>
+      <label for='ttype'>Which best describes you?</label>
+      <select id='ttype'>
+        <option>I have done this kind of work before</option>
+        <option>I am a student looking for work experience</option>
+        <option>I am just looking for a job</option>
+      </select>
+      <label for='tmsg'>A bit about you (experience, availability, why you are interested)</label>
+      <textarea id='tmsg' rows='4'></textarea>
+      <label style='display:flex;align-items:flex-start;gap:8px;font-weight:600;font-size:0.85rem;color:#16211D;margin:2px 0 16px;'>
+        <input type='checkbox' id='tpermit' required style='width:auto;margin-top:2px;'>
+        I confirm I have a valid work permit / am legally able to work in Canada
+      </label>
+      <button type='submit'>Prepare My Message</button>
+    </form>
   </div>
-  <form id='tf'>
-    <label for='tname'>Full name</label><input id='tname' required>
-    <label for='tphone'>Phone</label><input id='tphone' type='tel' required>
-    <label for='temail'>Email</label><input id='temail' type='email' required>
-    <label for='taddr'>Address</label><input id='taddr' required placeholder='Helps us match you to jobs near you'>
-    <label for='ttype'>Which best describes you?</label>
-    <select id='ttype'>
-      <option>I've done this kind of work before</option>
-      <option>I'm a student looking for work experience</option>
-      <option>I'm just looking for a job</option>
-    </select>
-    <label for='tmsg'>A bit about you (experience, availability, why you're interested)</label>
-    <textarea id='tmsg' rows='4'></textarea>
-    <label style='display:flex;align-items:flex-start;gap:8px;font-weight:600;font-size:0.85rem;color:#16211D;margin:2px 0 16px;'>
-      <input type='checkbox' id='tpermit' required style='width:auto;margin-top:2px;'>
-      I confirm I have a valid work permit / am legally able to work in Canada
-    </label>
-    <button type='submit'>Send to MAIDEN</button>
-  </form>
+  <div id='resultViewT' style='display:none;'>
+    <h2>Your Message Is Ready</h2>
+    <p class='sub'>Copy this and send it however you'd like — WhatsApp, email, text, whatever's easiest. Feel free to edit it first.</p>
+    <textarea id='resultTextT'></textarea>
+    <div style='margin-top:12px;'><button type='button' id='copyBtnT'>Copy to Clipboard</button></div>
+    <div class='btn-row'>
+      <a id='emailLinkT' class='btn-outline' href='#' target='_top'>Open in Email</a>
+      <a id='waLinkT' class='btn-outline' href='#' target='_blank' rel='noopener'>Open in WhatsApp</a>
+    </div>
+    <button type='button' id='backBtnT' class='btn-ghost-sm'>&amp;larr; Edit my answers</button>
+  </div>
   <script>
     var TEAM_EMAIL = 'hello.maidenyeg@gmail.com';
+    var BUSINESS_PHONE = '17802388998';
+    var formViewT = document.getElementById('formViewT');
+    var resultViewT = document.getElementById('resultViewT');
+    var resultTextT = document.getElementById('resultTextT');
+    var copyBtnT = document.getElementById('copyBtnT');
+    var emailLinkT = document.getElementById('emailLinkT');
+    var waLinkT = document.getElementById('waLinkT');
+
+    function buildTeamMessage(name){
+      var addr = document.getElementById('taddr').value;
+      var type = document.getElementById('ttype').value;
+      var about = document.getElementById('tmsg').value || 'nothing further to add right now';
+      var phone = document.getElementById('tphone').value;
+      var email = document.getElementById('temail').value;
+      var permit = document.getElementById('tpermit').checked ? 'Yes' : 'No';
+      var lines = [
+        'Hi MAIDEN, I am ' + name + ' and I am interested in joining the team.',
+        '',
+        type + '. ' + about,
+        '',
+        'Address: ' + addr,
+        'Work permit confirmed: ' + permit,
+        '',
+        'You can reach me on WhatsApp or by call at ' + phone + ', or by email at ' + email + '.',
+        '',
+        'Looking forward to hearing from you,',
+        name
+      ];
+      return lines.join(String.fromCharCode(10));
+    }
+
     document.getElementById('tf').addEventListener('submit', function(e){
       e.preventDefault();
       var name = document.getElementById('tname').value;
+      var msg = buildTeamMessage(name);
+      resultTextT.value = msg;
+      formViewT.style.display = 'none';
+      resultViewT.style.display = 'block';
       var subject = 'New Team Inquiry — ' + name + ' wants to join MAIDEN';
-      var body = 'Name: ' + name +
-        '\nPhone: ' + document.getElementById('tphone').value +
-        '\nEmail: ' + document.getElementById('temail').value +
-        '\nAddress: ' + document.getElementById('taddr').value +
-        '\nApplicant type: ' + document.getElementById('ttype').value +
-        '\nWork permit confirmed: ' + (document.getElementById('tpermit').checked ? 'Yes' : 'No') +
-        '\nMessage: ' + (document.getElementById('tmsg').value || '—');
-      window.top.location.href = 'mailto:' + TEAM_EMAIL + '?subject=' + encodeURIComponent(subject) + '&amp;body=' + encodeURIComponent(body);
+      emailLinkT.href = 'mailto:' + TEAM_EMAIL + '?subject=' + encodeURIComponent(subject) + '&amp;body=' + encodeURIComponent(msg);
+      waLinkT.href = 'https://wa.me/' + BUSINESS_PHONE + '?text=' + encodeURIComponent(msg);
+    });
+
+    copyBtnT.addEventListener('click', function(){
+      resultTextT.focus();
+      resultTextT.select();
+      var copied = false;
+      try{
+        if(navigator.clipboard &amp;&amp; navigator.clipboard.writeText){
+          navigator.clipboard.writeText(resultTextT.value);
+          copied = true;
+        }
+      }catch(err){}
+      if(!copied){
+        try{ document.execCommand('copy'); copied = true; }catch(err){}
+      }
+      copyBtnT.textContent = copied ? 'Copied!' : 'Select the text above and copy';
+      setTimeout(function(){ copyBtnT.textContent = 'Copy to Clipboard'; }, 2200);
+    });
+
+    document.getElementById('backBtnT').addEventListener('click', function(){
+      resultViewT.style.display = 'none';
+      formViewT.style.display = 'block';
     });
   </script>
 </body></html>
@@ -1198,175 +1538,31 @@
   </div>
 </div>
 
-<!-- PRIVACY POLICY MODAL -->
-<div class="modal-overlay" id="privacyModal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Privacy Policy">
-  <div class="modal-panel doc">
-    <button class="modal-close" type="button" data-close="privacyModal" aria-label="Close">&times;</button>
-    <div class="doc-inner">
-      <h2>Privacy Policy</h2>
-      <p class="doc-updated">Last updated: July 2026</p>
-
-      <p>MAIDEN is the registered trade name of Maiden Cleaning Service (Alberta Trade Name Registration No. TN28380954, effective May 1, 2025) ("MAIDEN," "we," "us," or "our"), a residential and small-commercial cleaning company based in South West Edmonton, Alberta, serving Chappelle, Paisley, Jagare Ridge, Heritage Valley, and surrounding communities. This Privacy Policy explains how we collect, use, and protect personal information when you visit maidenyeg.ca (the "Site"), contact us, or become a client.</p>
-
-      <h3>1. Information We Collect</h3>
-      <ul>
-        <li>Contact details you provide, such as your name, phone number, email address, and home address or neighbourhood</li>
-        <li>Details about your service request, such as service type, space size, preferred dates, pet information, and special instructions</li>
-        <li>Team or volunteer inquiries, including name, phone, email, and any experience or message you share with us</li>
-        <li>Photos of completed work, only with your explicit written consent (see Section 5)</li>
-        <li>Basic interactions on our social media pages or Google Business Profile, which are also governed by those platforms' own privacy policies</li>
-      </ul>
-      <p>We do not collect payment card information through this Site. Payment is arranged directly with our team.</p>
-
-      <h3>2. How We Use Your Information</h3>
-      <ul>
-        <li>To respond to quote requests and schedule service</li>
-        <li>To communicate with you about appointments, changes, or invoices</li>
-        <li>To respond to team or volunteer inquiries</li>
-        <li>To improve our services</li>
-        <li>With your separate consent, to feature before-and-after photos in our marketing</li>
-      </ul>
-      <p>We do not sell, rent, or trade your personal information to third parties.</p>
-
-      <h3>3. How Your Information Reaches Us</h3>
-      <p>Forms on this Site are currently designed to open a pre-filled email in your own email application, addressed to our business inbox. Your information is sent directly from your device to our email — it does not pass through or get stored on an external server operated by us or a third party. If we adopt a different form or booking tool in the future, we will update this policy to describe that change.</p>
-
-      <h3>4. Photo &amp; Consent Policy</h3>
-      <p>We may photograph completed jobs for quality review and, separately, for marketing purposes. We only use photos publicly with your prior written consent. For senior clients, or where a family member or Power of Attorney is involved in care decisions, we seek consent from that person as well. We never include identifying details such as addresses, mail, personal documents, or medication in any photo we use publicly, and we blur or exclude the faces of residents unless you've specifically agreed otherwise.</p>
-
-      <h3>5. Data Retention</h3>
-      <p>We keep client and inquiry information only as long as reasonably necessary to provide our services, meet legal and tax obligations (such as Canada Revenue Agency recordkeeping requirements), and maintain a reasonable business history. You may request that we delete your information at any time, subject to our legal recordkeeping obligations.</p>
-
-      <h3>6. Your Rights</h3>
-      <p>Under Alberta's Personal Information Protection Act (PIPA) and, where applicable, the federal Personal Information Protection and Electronic Documents Act (PIPEDA), you have the right to:</p>
-      <ul>
-        <li>Ask what personal information we hold about you</li>
-        <li>Request corrections to inaccurate information</li>
-        <li>Withdraw consent for marketing use of your photos or information at any time</li>
-        <li>Request deletion of your information, subject to our legal recordkeeping requirements</li>
-      </ul>
-      <p>To exercise these rights, contact us using the details in Section 9.</p>
-
-      <h3>7. Cookies &amp; Website Analytics</h3>
-      <p>As of this policy's last update, maidenyeg.ca does not use cookies, tracking pixels, or third-party analytics software. If this changes, we will update this policy and, where required, seek your consent.</p>
-
-      <h3>8. Third-Party Links</h3>
-      <p>Our Site and social profiles may link to third-party platforms such as Instagram, Facebook, TikTok, or Google Business Profile. Those platforms have their own privacy policies, which we encourage you to review — we are not responsible for their practices.</p>
-
-      <h3>9. Contact Us</h3>
-      <p>Questions about this Privacy Policy or your personal information can be directed to:<br>
-      <strong>MAIDEN</strong><br>
-      Email: hello.maidenyeg@gmail.com<br>
-      Phone: 780-238-8998<br>
-      South West Edmonton, Alberta</p>
-      <p style="font-size:0.8rem;">MAIDEN is the registered trade name of Maiden Cleaning Service — Alberta Trade Name Registration No. TN28380954 · Business Number 764294575 · GST Tax ID 764294575RC0001.</p>
-
-      <h3>10. Changes to This Policy</h3>
-      <p>We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. The "last updated" date at the top reflects the most recent version.</p>
-    </div>
-  </div>
-</div>
-
-<!-- TERMS OF SERVICE MODAL -->
-<div class="modal-overlay" id="termsModal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Terms of Service">
-  <div class="modal-panel doc">
-    <button class="modal-close" type="button" data-close="termsModal" aria-label="Close">&times;</button>
-    <div class="doc-inner">
-      <h2>Terms of Service</h2>
-      <p class="doc-updated">Last updated: July 2026</p>
-
-      <h3>1. Acceptance of Terms</h3>
-      <p>By using maidenyeg.ca (the "Site") or requesting a quote, booking, or otherwise engaging MAIDEN — the registered trade name of Maiden Cleaning Service, Alberta Trade Name Registration No. TN28380954, effective May 1, 2025 ("MAIDEN," "we," "us," or "our") — you agree to these Terms of Service. If you do not agree, please do not use the Site or our services.</p>
-
-      <h3>2. About MAIDEN</h3>
-      <p>MAIDEN is a residential and small-commercial cleaning company based in South West Edmonton, Alberta, offering Private Home Cleaning, Senior Home Cleaning, Move-In/Move-Out Cleaning, Private &amp; Small Event Cleaning, and Private Office Cleaning within Chappelle, Paisley, Jagare Ridge, Heritage Valley, and surrounding areas.</p>
-
-      <h3>3. Quotes &amp; Estimates</h3>
-      <p>Depending on the service, pricing on this Site is either a flat, formula-based rate or an hourly rate with a stated minimum:</p>
-      <ul>
-        <li><strong>Flat rate:</strong> Private Home and Private Office Routine Cleaning; repeat-client Deep Cleaning at an established property; AirBnB Turnover at an established property (2nd visit onward); AirBnB Quarterly Deep Clean; and Pre-Event cleans.</li>
-        <li><strong>Hourly, with a guaranteed minimum:</strong> Move-In/Move-Out; Post-Event cleans; a first-time Deep Clean at a new property; and a first visit to a new AirBnB property. The final total depends on time on site, billed at or above the stated minimum.</li>
-      </ul>
-      <p>Any figure generated by our online estimate tool, whether flat or hourly, is a non-binding starting estimate based on the information you provide (such as bedroom and bathroom count). Same-day or rush bookings for Private &amp; Small Events carry a 25% surcharge on the applicable rate. Final pricing is confirmed by phone or in writing before any booking is finalized, and is subject to applicable GST. Senior Home pricing is quoted individually after a short consultation and is not published on the Site.</p>
-      <p>Our preferred payment method is e-Transfer — free to send from any Canadian bank, and how most clients already pay. Cash is accepted as an alternative; we do not currently process card payments.</p>
-
-      <h3>4. Booking &amp; Service Agreement</h3>
-      <p>Submitting a quote request through the Site does not create a binding booking. A booking is confirmed only once MAIDEN and the client agree on scope, price, and date. These Terms of Service function as MAIDEN's Service Agreement with you, covering pricing, scheduling, cancellation and rescheduling policy, payment terms, and the damage-claim process set out below. For recurring or larger jobs, MAIDEN may confirm additional property-specific details in writing — such as access and key-handling procedures, or a package tier (Fresh Start, Maintenance Plan, or Weekly Plan) — which supplement, and do not override, these Terms.</p>
-
-      <h3>5. Client Responsibilities</h3>
-      <p>To help us do our job safely and well, clients agree to:</p>
-      <ul>
-        <li>Provide accurate information about the space, access instructions, and any pets on site</li>
-        <li>Secure or disclose fragile, valuable, or sentimental items before a visit</li>
-        <li>Disclose any known hazards (structural, chemical, pest, or otherwise) in advance</li>
-        <li>Ensure a safe, lawful working environment for our team</li>
-      </ul>
-
-      <h3>6. Our Guarantee</h3>
-      <p>We stand behind our work. If a visit doesn't meet the standard you expected, tell us within 24 hours and we'll make it right — most often a prompt re-clean of the area in question, or a refund tied specifically to the issue raised. We will never condition a refund, credit, or discount on removing or changing an honest review; that's not how we want to earn your trust.</p>
-      <p>For Senior Homes bookings specifically, we honor the appointment window we've committed to. If something on our end requires a change, we'll tell you as early as possible and offer the next available slot at no charge — we know coordinating care around a loved one doesn't leave room for a cleaner who's late without warning.</p>
-
-      <h3>7. Liability</h3>
-      <p>MAIDEN carries commercial general liability insurance. That said:</p>
-      <ul>
-        <li>We are not liable for pre-existing damage, normal wear and tear, or the failure of improperly installed, maintained, or aged fixtures and surfaces</li>
-        <li>Any damage claim must be reported to us within 48 hours of the service date so we can assess and address it promptly</li>
-        <li>Our total liability for any claim arising from a service is limited to the cost of the service in question, except where limiting liability is not permitted by law</li>
-        <li>We are not responsible for items of unusual value left accessible during a visit that were not disclosed to us in advance</li>
-      </ul>
-      <p>Nothing in these Terms limits any liability that cannot be excluded under Alberta or Canadian law.</p>
-
-      <h3>8. Cancellations &amp; Rescheduling</h3>
-      <p><strong>Single-visit bookings</strong> (Private Homes, Senior Homes, Move-In/Move-Out, Private &amp; Small Events, Private Offices, and one-off AirBnB Servicing turnovers):</p>
-      <ul>
-        <li>48 hours or more notice: no fee.</li>
-        <li>24–48 hours notice: 15% of the quoted job value.</li>
-        <li>Under 24 hours notice, or no access at time of arrival (e.g. lockout, unit still occupied): 25% of the quoted job value.</li>
-        <li>Rescheduling to a new date, given 24+ hours notice, carries no fee, subject to availability.</li>
-      </ul>
-      <p><strong>Recurring packages</strong> (Fresh Start, Maintenance Plan, Weekly Plan): cancel or downgrade anytime with 7 days' written notice. No contracts, no lock-in. Any visit already scheduled within that 7-day window will be completed and billed at the normal rate.</p>
-      <p><strong>Ongoing servicing arrangements</strong> (e.g. AirBnB Servicing under a signed MoU): governed by the specific MoU, which may set its own notice period and visit count for winding down. Individual visit cancellations within an active arrangement follow the single-visit schedule above unless the MoU states otherwise.</p>
-      <p>These fees reflect staff time and scheduling opportunity already committed to your visit — not a penalty for cancelling.</p>
-      <p>If MAIDEN needs to cancel or reschedule (illness, severe weather, safety concerns), we'll notify you as early as possible and offer the next available slot at no charge.</p>
-      <p><strong>Refunds:</strong> if a fee applies to a prepaid visit, it's deducted from the refund; the balance returns via e-transfer within 5 business days, or can be applied as credit toward a future booking.</p>
-
-      <h3>9. Photos &amp; Marketing</h3>
-      <p>We may ask to photograph completed work for quality review and, with your separate written consent, for marketing use. See our Privacy Policy for full detail on our photo and consent practices.</p>
-
-      <h3>10. Website Content &amp; Intellectual Property</h3>
-      <p>All text, graphics, and the MAIDEN name and logo on this Site are the property of MAIDEN and may not be copied, reproduced, or used without our written permission.</p>
-
-      <h3>11. Referral &amp; Promotional Offers</h3>
-      <p>Introductory, referral, and loyalty offers described on the Site are subject to change or withdrawal at any time and apply only as described at the time of a confirmed booking.</p>
-
-      <h3>12. Third-Party Links</h3>
-      <p>This Site may link to third-party platforms such as Instagram, Facebook, TikTok, or Google Business Profile. We are not responsible for the content, policies, or practices of those platforms.</p>
-
-      <h3>13. Governing Law</h3>
-      <p>These Terms are governed by the laws of the Province of Alberta and the federal laws of Canada applicable therein. Any dispute will first be addressed informally between the parties; where that is not possible, disputes will be resolved in the courts of Alberta.</p>
-
-      <h3>14. Changes to These Terms</h3>
-      <p>We may update these Terms from time to time. Continued use of the Site or our services after changes are posted means you accept the updated Terms.</p>
-
-      <h3>15. Contact Us</h3>
-      <p><strong>MAIDEN</strong><br>
-      Email: hello.maidenyeg@gmail.com<br>
-      Phone: 780-238-8998<br>
-      South West Edmonton, Alberta</p>
-      <p style="font-size:0.8rem;">MAIDEN is the registered trade name of Maiden Cleaning Service — Alberta Trade Name Registration No. TN28380954 · Business Number 764294575 · GST Tax ID 764294575RC0001.</p>
-    </div>
-  </div>
-</div>
-
 <script>
   // ---- Estimate widget ----
-  (function(){const _hk=[0x6e,0x28,0x19],_ok=[0x84,0x30,0x1e],_dm=1+2/5,_hr=0x32,_dc=0x23;const _s={b:3,h:2,d:1};const _bv=document.getElementById('bedVal'),_hv=document.getElementById('bathVal'),_dv=document.getElementById('declutterVal');const _ea=document.getElementById('estAmount'),_ec=document.getElementById('estCents'),_el=document.getElementById('estLabel'),_en=document.getElementById('estNote'),_eb=document.getElementById('estBtnLabel');const _sv=document.getElementById('svc'),_bl=document.getElementById('bedLabel');const _fvF=document.getElementById('firstVisitField'),_fv=document.getElementById('firstVisit');const _dcF=document.getElementById('declutterField'),_dcOn=document.getElementById('declutterOn'),_dcStep=document.getElementById('declutterStepper');const _rF=document.getElementById('rushField'),_rOn=document.getElementById('rushOn');const _sizeF=document.getElementById('sizeFields'),_bathF=document.getElementById('bathField');const _up=document.getElementById('airbnbUpsell');function _hR(b,h){return _hk[0]+(b*_hk[1])+(Math.max(0,h-1)*_hk[2]);}function _oR(o,h){return _ok[0]+(Math.max(0,o-1)*_ok[1])+(Math.max(0,h-1)*_ok[2]);}function _c(){const v=_sv.value, b=_s.b, h=_s.h;const declOn=_dcOn.checked, declRooms=_s.d, rush=_rOn.checked, first=_fv.checked;let mode='flat', amt=0, hrs=0;const addOn = declOn ? (_dc*declRooms) : 0;_fvF.style.display = (v==='home-deep'||v==='office-deep'||v==='airbnb-turn') ? 'block' : 'none';_dcF.style.display = (v==='home-routine'||v==='home-deep'||v==='office-routine'||v==='office-deep') ? 'block' : 'none';_rF.style.display = (v==='event-pre'||v==='event-post') ? 'block' : 'none';_dcStep.style.display = declOn ? 'flex' : 'none';const noSize = (v==='move'||v==='event-post');_sizeF.style.display = noSize ? 'none' : 'block';_bathF.style.display = noSize ? 'none' : 'block';_bl.textContent = v.indexOf('office')===0 ? 'Offices' : (v.indexOf('airbnb')===0 ? 'Beds' : 'Bedrooms');_up.style.display = v==='airbnb-turn' ? 'grid' : 'none';if(v==='home-routine'){ amt=_hR(b,h); }else if(v==='home-deep'){ if(first){mode='hourly';hrs=2;} else {amt=_hR(b,h)*_dm;} }else if(v==='office-routine'){ amt=_oR(b,h); }else if(v==='office-deep'){ if(first){mode='hourly';hrs=2;} else {amt=_oR(b,h)*_dm;} }else if(v==='move'){ mode='hourly'; hrs=4; }else if(v==='airbnb-turn'){ if(first){mode='hourly';hrs=2;} else {amt=_hR(b,h);} }else if(v==='airbnb-deep'){ amt=_hR(b,h)*_dm; }else if(v==='event-pre'){ amt=_hR(b,h); if(rush) amt*=1.25; }else if(v==='event-post'){ mode='hourly'; hrs=2; if(rush) hrs*=1.25; }if(mode==='flat'){amt+=addOn;_ea.textContent=Math.round(amt).toLocaleString('en-CA');_ec.textContent='.00';_el.textContent='Your estimate';_en.textContent='Before 5% GST · a firm price is confirmed on a quick call';_eb.textContent='Book This Estimate';} else {const floor=Math.round(hrs*_hr+addOn);_ea.textContent=_hr;_ec.textContent='/hr';_el.textContent='Starting rate';let note=hrs+'-hr minimum ($'+floor+' floor';if(addOn>0) note+=' incl. $'+addOn+' decluttering';note+=') · before 5% GST · final total based on time on site';_en.textContent=note;_eb.textContent='Request This Quote';}}document.querySelectorAll('.stepper button').forEach(function(btn){btn.addEventListener('click',function(){const tg=btn.dataset.target,d=parseInt(btn.dataset.dir,10);const mn = tg==='bed'?0:1;const key = tg==='bed'?'b':(tg==='bath'?'h':'d');_s[key]=Math.max(mn,Math.min(8,_s[key]+d));(tg==='bed'?_bv:(tg==='bath'?_hv:_dv)).textContent=_s[key];_c();});});_sv.addEventListener('change',_c);_fv.addEventListener('change',_c);_dcOn.addEventListener('change',_c);_rOn.addEventListener('change',_c);_c();})();
+  (function(){const _hk=[0x6e,0x28,0x19],_ok=[0x84,0x30,0x1e],_dm=1+2/5,_hr=0x32,_dc=0x23;const _s={b:3,h:2,d:1};const _bv=document.getElementById('bedVal'),_hv=document.getElementById('bathVal'),_dv=document.getElementById('declutterVal');const _ea=document.getElementById('estAmount'),_ec=document.getElementById('estCents'),_el=document.getElementById('estLabel'),_en=document.getElementById('estNote'),_eb=document.getElementById('estBtnLabel');const _sv=document.getElementById('svc'),_bl=document.getElementById('bedLabel');const _fvF=document.getElementById('firstVisitField'),_fv=document.getElementById('firstVisit');const _dcF=document.getElementById('declutterField'),_dcOn=document.getElementById('declutterOn'),_dcStep=document.getElementById('declutterStepper');const _rF=document.getElementById('rushField'),_rOn=document.getElementById('rushOn');const _sizeF=document.getElementById('sizeFields'),_bathF=document.getElementById('bathField');const _up=document.getElementById('airbnbUpsell');function _hR(b,h){return _hk[0]+(b*_hk[1])+(Math.max(0,h-1)*_hk[2]);}function _oR(o,h){return _ok[0]+(Math.max(0,o-1)*_ok[1])+(Math.max(0,h-1)*_ok[2]);}function _c(){const v=_sv.value, b=_s.b, h=_s.h;const declOn=_dcOn.checked, declRooms=_s.d, rush=_rOn.checked, first=_fv.checked;let mode='flat', amt=0, hrs=0;const addOn = declOn ? (_dc*declRooms) : 0;_fvF.style.display = (v==='home-deep'||v==='office-deep'||v==='airbnb-turn') ? 'block' : 'none';_dcF.style.display = (v==='home-routine'||v==='home-deep'||v==='office-routine'||v==='office-deep') ? 'block' : 'none';_rF.style.display = (v==='event-pre'||v==='event-post') ? 'block' : 'none';_dcStep.style.display = declOn ? 'flex' : 'none';const noSize = (v==='move'||v==='event-post');_sizeF.style.display = noSize ? 'none' : 'block';_bathF.style.display = noSize ? 'none' : 'block';_bl.textContent = v.indexOf('office')===0 ? 'Offices' : (v.indexOf('airbnb')===0 ? 'Beds' : 'Bedrooms');_up.style.display = v==='airbnb-turn' ? 'grid' : 'none';if(v==='home-routine'){ amt=_hR(b,h); }else if(v==='home-deep'){ if(first){mode='hourly';hrs=2;} else {amt=_hR(b,h)*_dm;} }else if(v==='office-routine'){ amt=_oR(b,h); }else if(v==='office-deep'){ if(first){mode='hourly';hrs=2;} else {amt=_oR(b,h)*_dm;} }else if(v==='move'){ mode='hourly'; hrs=4; }else if(v==='airbnb-turn'){ if(first){mode='hourly';hrs=2;} else {amt=_hR(b,h);} }else if(v==='airbnb-deep'){ amt=_hR(b,h)*_dm; }else if(v==='event-pre'){ amt=_hR(b,h); if(rush) amt*=1.25; }else if(v==='event-post'){ mode='hourly'; hrs=2; if(rush) hrs*=1.25; }if(mode==='flat'){amt+=addOn;_ea.textContent=Math.round(amt).toLocaleString('en-CA');_ec.textContent='.00';_el.textContent='Your estimate';_en.textContent='Before 5% GST · a firm price is confirmed on a quick call';} else {const floor=Math.round(hrs*_hr+addOn);_ea.textContent=_hr;_ec.textContent='/hr';_el.textContent='Starting rate';let note=hrs+'-hr minimum ($'+floor+' floor';if(addOn>0) note+=' incl. $'+addOn+' decluttering';note+=') · before 5% GST · final total based on time on site';_en.textContent=note;}_eb.textContent='Reserve This Now';}document.querySelectorAll('.stepper button').forEach(function(btn){btn.addEventListener('click',function(){const tg=btn.dataset.target,d=parseInt(btn.dataset.dir,10);const mn = tg==='bed'?0:1;const key = tg==='bed'?'b':(tg==='bath'?'h':'d');_s[key]=Math.max(mn,Math.min(8,_s[key]+d));(tg==='bed'?_bv:(tg==='bath'?_hv:_dv)).textContent=_s[key];_c();});});_sv.addEventListener('change',_c);_fv.addEventListener('change',_c);_dcOn.addEventListener('change',_c);_rOn.addEventListener('change',_c);_c();})();
 </script>
 
 <script>
   // ---- Modals ----
   function openModal(id){
     const m = document.getElementById(id);
+    if(id === 'reserveModal'){
+      try{
+        const svcSel = document.getElementById('svc');
+        const svcLabel = svcSel.options[svcSel.selectedIndex].text;
+        const sizeLabel = document.getElementById('bedLabel').textContent;
+        const bedVal = document.getElementById('bedVal').textContent;
+        const bathVal = document.getElementById('bathVal').textContent;
+        const estAmt = document.getElementById('estAmount').textContent;
+        const estCents = document.getElementById('estCents').textContent;
+        const estNote = document.getElementById('estNote').textContent;
+        const summary = svcLabel + ' — ' + bedVal + ' ' + sizeLabel + ', ' + bathVal + ' Bathrooms — $' + estAmt + estCents + ' (' + estNote + ')';
+        const idoc = m.querySelector('iframe').contentWindow.document;
+        const el = idoc.getElementById('rsvSummary');
+        if(el) el.textContent = summary;
+      }catch(err){}
+    }
     m.classList.add('open');
     m.setAttribute('aria-hidden','false');
     document.body.style.overflow = 'hidden';
