@@ -5,6 +5,6 @@ window.MAIDEN_NUMBERS = {
     { bedrooms: 4, beds: 7, livingRooms: 1, kitchens: 1, bathrooms: 2.5 },
     { bedrooms: 5, beds: 5, livingRooms: 5, kitchens: 5, bathrooms: 5 },
     { bedrooms: 3, beds: 4, livingRooms: 1, kitchens: 1, bathrooms: 3 },
-    { bedrooms: 0, beds: 0, livingRooms: 0, kitchens: 0, bathrooms: 0 }
+    { bedrooms: 16, beds: 16, livingRooms: 8, kitchens: 8, bathrooms: 10 }
   ]
 };
