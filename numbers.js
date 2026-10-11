@@ -1,6 +1,6 @@
 window.MAIDEN_NUMBERS = {
-  asOf: "September 2026",
-  turnoverMilestone: "25+",
+  asOf: "October 2026",
+  turnoverMilestone: "35+",
   properties: [
     { bedrooms: 4, beds: 7, livingRooms: 1, kitchens: 1, bathrooms: 2.5 },
     { bedrooms: 5, beds: 5, livingRooms: 5, kitchens: 5, bathrooms: 5 },
